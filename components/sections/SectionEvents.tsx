@@ -2,36 +2,24 @@ import React from 'react'
 import EventItem, { EventProps } from '../EventItem'
 
 import bootstrapStyles from '../../styles/Bootstrap.module.css'
+import utilsStyles from '../../styles/Utils.module.css'
 import pageStyles from '../../styles/Pages.module.css'
 import styles from '../../styles/sections/SectionEvents.module.css'
 
 const SectionEvents: React.FC = () => {
 
   type eventsList = EventProps[] | [];
-
-  // const availableEvents: eventsList = [
-  //   {
-  //     title: 'Palco Livre Edição Especial',
-  //     date: '22 out 2022',
-  //     location: 'quadra, sp',
-  //     ticketsUrl: '#',
-  //     googleMapsUrl: '#'
-  //   }
-  // ];
-
   const availableEvents: eventsList = [];
 
-  console.log(availableEvents?.length);
-
   return (
-    <section className="events" id="shows">
+    <section className={styles['events']} id="shows">
       <div className={bootstrapStyles['container']}>
         <div className={bootstrapStyles['row']}>
           <div className={bootstrapStyles['col-lg-12']}>
 
             <div className={pageStyles['section-heading']}>
               <h2 className="title">Shows</h2>
-              <a href="#" className={pageStyles['side-link']}>Mais Datas</a>
+              <a href="#" className={pageStyles['side-link'] + ' ' + utilsStyles['hidden']}>Mais Datas</a>
             </div>
 
             <div className={styles['events-holder']}>

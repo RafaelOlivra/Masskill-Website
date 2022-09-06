@@ -1,5 +1,10 @@
 /* #### Shared Page Styles #### */
 
+.page-sub-header {
+  display: block;
+  width: 100%;
+}
+
 .page-title {
   margin-bottom: calc(var(--df-margin-unit) * 2);
 }

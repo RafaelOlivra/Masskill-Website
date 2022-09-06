@@ -24,7 +24,7 @@ const Home: NextPage = () => {
           <div className={bootstrapStyles['row']}>
             <div className={bootstrapStyles['col-lg-12']}>
               <div className={utilsStyles['text-center']}>
-                <h1 className={pageStyles['page-title']}>Novo single “Blurry Visions” esta disponível!</h1>
+                <h1 className={pageStyles['page-title']}>Novo single “Blurry Visions” está disponível!</h1>
               </div>
             </div>
           </div>

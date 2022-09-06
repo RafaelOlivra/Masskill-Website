@@ -2,6 +2,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import SocialIconRow from '../components/SocialIconRow'
 
@@ -9,22 +10,21 @@ import bootstrapStyles from '../styles/Bootstrap.module.css'
 import utilsStyles from '../styles/Utils.module.css'
 import headerStyles from '../styles/Header.module.css'
 import footerStyles from '../styles/Footer.module.css'
-import Link from 'next/link'
 
 const Header = () => {
 
-  const [menuActive, toggleMenu] = useState(false);
+  const [menuActive, toggleMenu] = useState(false)
 
   const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    const target = e.target as HTMLAnchorElement;
+    const target = e.target as HTMLAnchorElement
     if (target && target.href) {
-      let urlHash = target.href.replace(window.location.origin + window.location.pathname, '');
+      let urlHash = target.href.replace(window.location.origin + window.location.pathname, '')
       if (urlHash.match('^#') && urlHash !== '#') {
-        e.preventDefault();
-        const targetSection = document.getElementById(urlHash.replace('#', ''));
+        e.preventDefault()
+        const targetSection = document.getElementById(urlHash.replace('#', ''))
         if (targetSection) {
-          toggleMenu(false);
-          targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          toggleMenu(false)
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' })
         }
       }
     }
@@ -38,16 +38,16 @@ const Header = () => {
             <nav className={headerStyles['main-navigation'] + ' ' + (menuActive ? headerStyles['mb-active'] : '')}>
               <span id="main-menu-trigger" className={headerStyles['menu-trigger']} onClick={() => toggleMenu(!menuActive)}>{menuActive ? 'X' : 'Menu'}</span>
               <ul>
-                <li><a href="#videos" onClick={(e) => handleScrollToSection(e)}>Videos</a></li>
-                <li><a href="#discografia" onClick={(e) => handleScrollToSection(e)}>Discografia</a></li>
-                <li><a href="#shows" onClick={(e) => handleScrollToSection(e)}>Shows</a></li>
-                <li><a href="#sobre" onClick={(e) => handleScrollToSection(e)}>Sobre</a></li>
-                <li><a href="#contato" onClick={(e) => handleScrollToSection(e)}>Contato</a></li>
+                <li><Link href="/#videos" passHref><a onClick={(e) => handleScrollToSection(e)}>Videos</a></Link></li>
+                <li><Link href="/#discografia" passHref><a onClick={(e) => handleScrollToSection(e)}>Discografia</a></Link></li>
+                <li><Link href="/#shows" passHref><a onClick={(e) => handleScrollToSection(e)}>Shows</a></Link></li>
+                <li><Link href="/#sobre" passHref><a onClick={(e) => handleScrollToSection(e)}>Sobre</a></Link></li>
+                <li><Link href="/#contato" passHref><a onClick={(e) => handleScrollToSection(e)}>Contato</a></Link></li>
               </ul>
             </nav>
 
             <div className={headerStyles['logo-holder']}>
-              <Image src="/logo.svg" alt="Masskill Site Oficial" width={684} height={93} objectFit="contain" />
+              <Link href="/"><a><Image src="/logo.svg" alt="Masskill Site Oficial" width={684} height={93} objectFit="contain" /></a></Link>
             </div>
 
             <div className={headerStyles['social-media-block']}>
@@ -82,23 +82,23 @@ const Footer = () => {
       'bg-down-society.jpg': 'Down Society Bg',
     }
 
-    const bgCount = Object.keys(bgs).length;
+    const bgCount = Object.keys(bgs).length
 
-    const [currentActiveBg, updateActiveBg] = useState(0);
+    const [currentActiveBg, updateActiveBg] = useState(0)
 
     const handleBgUpdate = () => {
       setTimeout(() => {
         if (currentActiveBg > (bgCount - 2)) {
           updateActiveBg(0)
         } else {
-          updateActiveBg(currentActiveBg + 1);
+          updateActiveBg(currentActiveBg + 1)
         }
-      }, 10000);
+      }, 10000)
     }
 
     useEffect(() => {
-      handleBgUpdate();
-    });
+      handleBgUpdate()
+    })
 
     return (
       <>
@@ -127,8 +127,8 @@ const Footer = () => {
                 <ul>
                   <li><a href="#"
                     onClick={(e) => {
-                      e.preventDefault();
-                      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                      e.preventDefault()
+                      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
                     }
                     }>Ir para o topo</a></li>
                   <li><a href="#">Política de privacidade</a></li>
@@ -149,7 +149,7 @@ const Footer = () => {
 }
 
 type Props = {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const Layout = ({ children }: Props) => {

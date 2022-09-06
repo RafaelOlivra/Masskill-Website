@@ -8,23 +8,6 @@ import pageStyles from '../../styles/Pages.module.css'
 import styles from '../../styles/sections/SectionDiscography.module.css'
 
 const SectionDiscography: React.FC = () => {
-    const [currentSpotifyEmbedUrl, updateSpotifyEmbed] = useState('https://open.spotify.com/album/2rncJ3kK5FTTnjRlqdrgkp?si=7GVNieDBQq2qEi2-VIcJRA&dl_branch=1&nd=1');
-
-    const handleSpotifyEmbedUpdate = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, spotifyUrl: string) => {
-        if (spotifyUrl) {
-            e.preventDefault();
-            updateSpotifyEmbed(spotifyUrl);
-
-            const section = document.getElementById('spotify-player');
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        }
-    }
-
-    const SpotifyEmbed = () => {
-        return (currentSpotifyEmbedUrl) ? <Spotify uri={currentSpotifyEmbedUrl} size="large" view="coverart" /> : <div className='loading'>Loading...</div>
-    }
 
     type albumsList = AlbumProps[] | [];
 
@@ -58,8 +41,28 @@ const SectionDiscography: React.FC = () => {
         }
     ];
 
+
+    // Handle the Spotify embed widget
+    const [currentSpotifyEmbedUrl, updateSpotifyEmbed] = useState(availableAlbums[0].spotifyUrl);
+
+    const handleSpotifyEmbedUpdate = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, spotifyUrl: string) => {
+        if (spotifyUrl) {
+            e.preventDefault();
+            updateSpotifyEmbed(spotifyUrl);
+
+            const section = document.getElementById('spotify-player');
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    }
+
+    const SpotifyEmbed = () => {
+        return (currentSpotifyEmbedUrl) ? <Spotify uri={currentSpotifyEmbedUrl} size="large" view="coverart" /> : <div className='loading'>Loading...</div>
+    }
+
     return (
-        <section className="discografia" id="discografia">
+        <section className={styles['discography']} id="discografia">
             <div className={bootstrapStyles['container']}>
                 <div className={bootstrapStyles['row']}>
                     <div className={bootstrapStyles['col-lg-12']}>

@@ -4,10 +4,11 @@ import Button from '../Button'
 import bootstrapStyles from '../../styles/Bootstrap.module.css'
 import pageStyles from '../../styles/Pages.module.css'
 import utilsStyles from '../../styles/Utils.module.css'
+import styles from '../../styles/sections/SectionContact.module.css'
 
 const SectionContact: React.FC = () => {
   return (
-    <section className="contato" id="contato">
+    <section className={styles['contact']} id="contato">
       <div className={bootstrapStyles['container']}>
         <div className={bootstrapStyles['row']}>
           <div className={bootstrapStyles['col-lg-12']}>

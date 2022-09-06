@@ -9,7 +9,7 @@ export interface AlbumProps {
     date: number,
     spotifyUrl: string,
     isActive?: boolean,
-    onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, spotifyUrl: string) => void;
+    onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, spotifyUrl: string) => void
 }
 
 const AlbumItem: React.FC<AlbumProps> = ({ coverUrl, title, date, spotifyUrl, isActive, onClick }) => {

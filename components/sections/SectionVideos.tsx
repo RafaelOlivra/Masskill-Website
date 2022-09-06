@@ -1,6 +1,9 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ResponsiveVideo, { ResponsiveVideoProps } from '../ResponsiveVideo';
+
+import Carousel from 'nuka-carousel'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import bootstrapStyles from '../../styles/Bootstrap.module.css'
 import utilsStyles from '../../styles/Utils.module.css'
@@ -29,8 +32,9 @@ const SectionVideos: React.FC = () => {
         },
     ];
 
+    // Handle the featured video display
     const [currentFeaturedVideo, updateFeaturedVideo] = useState<ResponsiveVideoProps>({
-        url: availableVideos[0].url,
+        url: availableVideos[0].url + '?autoplay=1',
         title: availableVideos[0].title
     });
 
@@ -53,8 +57,20 @@ const SectionVideos: React.FC = () => {
             <ResponsiveVideo url={currentFeaturedVideo.url} title={currentFeaturedVideo.title} /> : <div className='loading'>Loading...</div>
     }
 
+    if (typeof window !== 'undefined') {
+        // detect window screen width function
+    }
+
+    // Set the amount of slider to show based on window size
+    const [slidesToShow, setSlidesToShow] = useState(3);
+    useEffect(() => {
+        if (typeof window !== 'undefined' && window.innerWidth < 800) {
+            setSlidesToShow(2);
+        }
+    }, []);
+
     return (
-        <section className="videos" id="videos">
+        <section className={styles['videos']} id="videos">
             <div className={bootstrapStyles['container']}>
                 <div className={bootstrapStyles['row']}>
                     <div className={bootstrapStyles['col-lg-12']}>
@@ -71,15 +87,31 @@ const SectionVideos: React.FC = () => {
                         </div>
                         <div className={styles['videos-carousel']}>
                             <div className={styles['holder']}>
-                                {availableVideos.length > 0 && availableVideos.map((ResponsiveVideoProps, index) => {
-                                    return (
-                                        <ResponsiveVideo
-                                            key={index}
-                                            {...ResponsiveVideoProps}
-                                            onClick={handleFeaturedVideoUpdate}
-                                        />
-                                    )
-                                })}
+                                {availableVideos.length > 0 &&
+                                    <Carousel
+                                        slidesToShow={slidesToShow}
+                                        defaultControlsConfig={{
+                                            nextButtonClassName: styles['carousel-next-button'],
+                                            nextButtonStyle: {},
+                                            prevButtonClassName: styles['carousel-prev-button'],
+                                            prevButtonStyle: {},
+                                            pagingDotsContainerClassName: styles['carousel-paging-dots'],
+                                            pagingDotsStyle: {
+                                                fill: 'white'
+                                            }
+                                        }}
+                                    >
+                                        {availableVideos.map((ResponsiveVideoProps, index) => {
+                                            return (
+                                                <div key={index} className={styles['slide-item']}>
+                                                    <ResponsiveVideo
+                                                        {...ResponsiveVideoProps}
+                                                        onClick={handleFeaturedVideoUpdate}
+                                                    />
+                                                </div>)
+                                        })}
+                                    </Carousel>
+                                }
                                 {availableVideos.length === 0 &&
                                     <p>Não há vídeos no momento.</p>
                                 }

@@ -21,8 +21,8 @@ export interface SocialIconRowProps {
 }
 
 const SocialIconRow: React.FC<SocialIconRowProps> = ({ spotify, facebook, instagram, youtube, palcoMp3, email, linkTarget, linkRel }) => {
-    linkTarget = linkTarget || '_blank';
-    linkRel = linkRel || 'noreferrer';
+    linkTarget = linkTarget || '_blank'
+    linkRel = linkRel || 'noreferrer'
     return (
         <>
             <div className={styles['social-icon-row']}>

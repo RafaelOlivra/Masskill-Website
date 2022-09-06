@@ -11,7 +11,7 @@ interface BandMemberBoxProps extends SocialIconRowProps {
 }
 
 const BandMemberBox: React.FC<BandMemberBoxProps> = ({ profileImage, url, name, ...socialProfiles }) => {
-    url = url || '#';
+    url = url || '#'
     return (
         <div className={styles['band-member-box']}>
             <a href={url} className={styles['main-link']} target="_blank" rel="noreferrer">

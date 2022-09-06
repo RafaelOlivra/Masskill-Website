@@ -8,13 +8,13 @@ interface BtnProps {
     className?: string
     id?: string
     rel?: string,
-    target?: string
-    children?: React.ReactNode;
-    onClick?: () => void;
+    target?: string,
+    children?: React.ReactNode,
+    onClick?: () => void
 }
 
 const Button: React.FC<BtnProps> = ({ href, type, className, id, rel, target, children, onClick }) => {
-    let _className = className || '';
+    let _className = className || ''
     return (
         <a onClick={onClick}
             href={href}
