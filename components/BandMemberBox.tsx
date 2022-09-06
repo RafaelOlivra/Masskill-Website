@@ -4,7 +4,7 @@ import SocialIconRow, { SocialIconRowProps } from '../components/SocialIconRow'
 
 import styles from '../styles/components/BandMemberBox.module.css'
 
-interface BandMemberBoxProps extends SocialIconRowProps {
+export interface BandMemberBoxProps extends SocialIconRowProps {
     profileImage: string,
     name: string,
     url?: string,
