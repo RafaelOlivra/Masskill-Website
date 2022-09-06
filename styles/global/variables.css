@@ -1,0 +1,109 @@
+/* #### Theme Colors & Variables #### */
+
+:root {
+
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: "Helvetica Neue", Arial, sans-serif;
+  --font-family-monospace: "Liberation Mono", "Courier New", monospace;
+
+  --rem-font-size: 62.5%;
+  --body-font-family: "Syne", "Helvetica", "sans-serif";
+  --heading-font-family: "Syne", "Helvetica", "sans-serif";
+  --body-font-size: 1.8rem;
+  --body-bg-color: #09090A;
+
+  --highlight-color: #5b9f52;
+  --highlight-color-hover: #4e8746;
+  --highlight-bg-color: var(--highlight-color);
+  --highlight-bg-text-color: #fff;
+  --highlight-color-alt: #5b9f52;
+  --highlight-color-alt-2: #5b9f52;
+  --highlight-color-alt-3: #37206b;
+  --light-bg-color: #fbfbfb;
+  --light-bg-text-color: var(--text-color);
+  --light-bg-title-color: var(--highlight-color);
+  --dark-bg-color: #252721;
+  --dark-bg-color-alt: linear-gradient(135deg, #1e1060 0%, #0f2669 100%);
+  --dark-bg-text-color: #fff;
+  --featured-post-cover-overlay-bg: linear-gradient(to bottom,
+      rgba(74, 102, 60, 0) 0%,
+      rgba(74, 102, 60, 0.7) 50%,
+      rgba(74, 102, 60, 0.9) 100%);
+  --white-bg-color: #fff;
+  --yellow-bg-color: #ffd337;
+  --light-cyan-bg-color: #d7edff;
+  --light-pink-bg-color: #fef1ef;
+  --green-bg-color: #eafbe5;
+  --green-bg-text-color: #577d4c;
+  --yellow-bg-color: #ffa128;
+  --yellow-bg-color-hover: #e39024;
+  --yellow-bg-text-color: var(--title-color);
+  --orange-bg-color: #f28426;
+  --orange-bg-color-hover: #eb6b20;
+  --orange-bg-text-color: #fff;
+
+  --btn-font-size: 1.8rem;
+  --btn-bg-color: #fff;
+
+  --btn-text-color: var(--body-bg-color);
+  --btn-bg-color-flat: #fff;
+  --btn-bg-color-hover: #fff;
+  --btn-text-color-hover: var(--body-bg-color);
+
+  --green-btn-bg-color: #577d4c;
+  --green-btn-bg-color-hover: #4a6a41;
+  --green-btn-bg-text-color: #fff;
+  --blue-btn-bg-color: #3fc3df;
+  --blue-btn-bg-color-hover: #36a8bf;
+  --blue-btn-bg-text-color: #fff;
+  --dark-blue-btn-bg-color: #0b64b5;
+  --dark-blue-btn-bg-color-hover: #0a5aa6;
+  --dark-blue-btn-bg-text-color: #fff;
+  --gray-btn-bg-color: #888;
+  --gray-btn-bg-color-hover: #1c1c1c;
+  --gray-btn-bg-text-color: #fff;
+
+  --title-color: #fff;
+  --text-color: #fff;
+  --text-light-color: #8f8f8f;
+  --table-background-color: var(--light-bg-color);
+  --table-border-color: #eee;
+
+  --form-control-bg-color: #fafafa;
+  --form-control-bg-color-hover: var(--light-bg-color);
+  --form-control-border-color: #fafafa;
+  --form-control-border-color-hover: var(--light-bg-color);
+  --form-control-box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.08);
+  --form-control-box-shadow-hover: 0 0 0 0.1rem rgba(0, 0, 0, 0.08);
+
+  --box-box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.03);
+  --box-border: 1px solid #eee;
+
+  --df-column-gap: 1.5rem;
+  --double-column-gap: calc(var(--df-column-gap) * 2);
+  --df-border-radius: .5rem;
+  --df-padding-unit: 3rem;
+  --df-margin-unit: 3rem;
+
+  /* Deprecated */
+  --box-box-border: var(--box-border);
+  --light-text-color: var(--text-light-color);
+}
+
+@media (max-width: 1440px) {
+  :root {
+    --df-padding-unit: 2.5rem;
+    --df-margin-unit: 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --df-padding-unit: 2rem;
+    --df-margin-unit: 2rem;
+  }
+}

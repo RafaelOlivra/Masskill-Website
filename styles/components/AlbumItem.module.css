@@ -1,0 +1,54 @@
+.album-item a {
+    display: flex;
+    align-items: center;
+    opacity: .6;
+}
+
+.album-item a:hover,
+.album-item.active a {
+    text-decoration: none;
+    opacity: 1;
+}
+
+.album-item+.album-item {
+    margin-top: var(--df-margin-unit);
+}
+
+.album-item .cover {
+    max-width: 16rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.album-item .cover img {
+    border-radius: var(--df-border-radius);
+}
+
+.album-item .meta-data {
+    padding-left: 3rem;
+}
+
+.album-item .meta-data .title {
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.album-item .meta-data .date {
+    font-size: 3rem;
+    color: var(--text-light-color);
+}
+
+@media (max-width: 992px) {
+    .album-item .cover {
+        max-width: 10rem;
+    }
+
+    .album-item .meta-data .title {
+        font-size: 2rem;
+    }
+
+    .album-item .meta-data .date {
+        font-size: 1.8rem;
+    }
+}

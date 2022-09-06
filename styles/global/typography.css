@@ -1,0 +1,43 @@
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: var(--df-margin-unit) 0;
+}
+
+h1,
+.h1 {
+    clear: both;
+    font-size: 5rem;
+}
+
+h2,
+.h2 {
+    clear: both;
+    font-size: 3.4rem;
+}
+
+@media (max-width: 992px) {
+
+    h1,
+    .h1 {
+        clear: both;
+        font-size: 3rem;
+    }
+
+    h2,
+    .h2 {
+        clear: both;
+        font-size: 2.2rem;
+    }
+}

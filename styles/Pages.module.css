@@ -1,0 +1,29 @@
+/* #### Shared Page Styles #### */
+
+.page-title {
+  margin-bottom: calc(var(--df-margin-unit) * 2);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: calc(var(--df-margin-unit) * 3);
+  margin-bottom: calc(var(--df-margin-unit) * 2);
+}
+
+.section-heading .side-link {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 992px) {
+  .section-heading {
+    margin-top: calc(var(--df-margin-unit) * 2);
+    margin-bottom: var(--df-margin-unit);
+  }
+
+  .section-heading .side-link {
+    font-size: 1.4rem;
+  }
+}

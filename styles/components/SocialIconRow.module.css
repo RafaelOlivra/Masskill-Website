@@ -1,0 +1,17 @@
+.social-icon-row ul {
+  list-style: none;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.social-icon-row ul li {
+  display: inline-block;
+  font-size: inherit;
+}
+
+.social-icon-row ul li a {
+  display: block;
+  font-size: inherit;
+  padding: 1rem var(--icon-padding, 1rem);
+}

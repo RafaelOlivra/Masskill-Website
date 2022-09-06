@@ -1,0 +1,20 @@
+.band-members-holder {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 1.5rem;
+    margin-bottom: var(--df-margin-unit);
+}
+
+@media (max-width: 992px) {
+    .band-members-holder {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1.5rem;
+        row-gap: 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .band-members-holder {
+        grid-template-columns: 1fr;
+    }
+}

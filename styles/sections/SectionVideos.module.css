@@ -1,0 +1,28 @@
+.featured-video-holder .video-holder {
+    margin-top: calc(var(--df-margin-unit) * 2);
+}
+
+.videos-carousel .holder {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: calc(var(--df-margin-unit) * 2);
+    row-gap: var(--df-margin-unit);
+}
+
+@media (max-width: 1400px) {
+    .videos-carousel .holder {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 992px) {
+    .videos-carousel .holder {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 400px) {
+    .videos-carousel .holder {
+        grid-template-columns: 1fr;
+    }
+}

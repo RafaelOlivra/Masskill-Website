@@ -1,0 +1,15 @@
+.spotify-embed-holder iframe {
+    border-radius: var(--df-border-radius);
+}
+
+@media (max-width: 992px) {
+    .spotify-embed-holder {
+        margin-top: 0;
+        margin-bottom: calc(var(--df-margin-unit) * 2);
+        order: -1;
+    }
+
+    .spotify-embed-holder iframe {
+        min-height: 30rem;
+    }
+}

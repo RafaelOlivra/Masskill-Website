@@ -1,0 +1,24 @@
+/* ## Scrollbars ## */
+
+@media (min-width: 992px) {
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, .1);
+  }
+
+  ::-webkit-scrollbar-thumb,
+  ::-webkit-scrollbar-thumb:horizontal {
+    background: #222;
+    background: #fff;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #111;
+  }
+
+}

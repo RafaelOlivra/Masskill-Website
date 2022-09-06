@@ -1,0 +1,47 @@
+.band-member-box {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    background: #eee;
+    margin-bottom: var(--df-margin-unit);
+}
+
+.band-member-box .main-link:hover {
+    opacity: 1;
+}
+
+.band-member-box .member-image {
+    z-index: 1;
+    border-radius: 0;
+    transition: transform ease .3s;
+    transform: scale(1.01);
+}
+
+.band-member-box:hover .member-image {
+    transform: scale(1.1);
+}
+
+.band-member-box .meta-data {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 1.5rem;
+    z-index: 2;
+}
+
+.band-member-box .meta-data .name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.band-member-box .social-media-profiles {
+    font-size: 2rem;
+}
+
+@media (max-width: 400px) {
+    .band-member-box .meta-data .name {
+        font-size: 1.6rem;
+    }
+}
