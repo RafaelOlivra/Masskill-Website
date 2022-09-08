@@ -1,9 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# hidden rehearsal page, not intended to be indexed
-/public/tracks/
-/pages/ensaio.tsx
-
 # dependencies
 /node_modules
 /.pnp
