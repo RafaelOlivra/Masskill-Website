@@ -3,11 +3,10 @@ import { useState, useEffect } from 'react'
 import ResponsiveVideo, { ResponsiveVideoProps } from '../ResponsiveVideo';
 
 import Carousel from 'nuka-carousel'
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import bootstrapStyles from '../../styles/Bootstrap.module.css'
 import utilsStyles from '../../styles/Utils.module.css'
-import pageStyles from '../../styles/Pages.module.css'
+import pageStyles from '../../styles/Page.module.css'
 import styles from '../../styles/sections/SectionVideos.module.css'
 
 const SectionVideos: React.FC = () => {

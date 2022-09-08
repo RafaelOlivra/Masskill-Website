@@ -131,7 +131,7 @@ const Footer = () => {
                       window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
                     }
                     }>Ir para o topo</a></li>
-                  <li><a href="#">Política de privacidade</a></li>
+                  <li><Link href="/privacy-policy"><a>Política de privacidade</a></Link></li>
                 </ul>
               </nav>
             </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '../Button'
 
 import bootstrapStyles from '../../styles/Bootstrap.module.css'
-import pageStyles from '../../styles/Pages.module.css'
+import pageStyles from '../../styles/Page.module.css'
 import utilsStyles from '../../styles/Utils.module.css'
 import styles from '../../styles/sections/SectionContact.module.css'
 

@@ -3,7 +3,7 @@ import EventItem, { EventProps } from '../EventItem'
 
 import bootstrapStyles from '../../styles/Bootstrap.module.css'
 import utilsStyles from '../../styles/Utils.module.css'
-import pageStyles from '../../styles/Pages.module.css'
+import pageStyles from '../../styles/Page.module.css'
 import styles from '../../styles/sections/SectionEvents.module.css'
 
 const SectionEvents: React.FC = () => {
