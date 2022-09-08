@@ -12,28 +12,28 @@ const SectionAbout: React.FC = () => {
 
   const bandMembers: bandMembersList = [
     {
-      profileImage: '/../public/member-giovanni-di-genova.jpg',
+      profileImage: '/member-giovanni-di-genova.jpg',
       name: 'Giovani Di Genova',
       url: 'https://www.facebook.com/profile.php?id=100010972477407',
       facebook: 'https://www.facebook.com/profile.php?id=100010972477407',
       instagram: 'https://www.instagram.com/giovanni_di_genova/',
     },
     {
-      profileImage: '/../public/member-rafael-oliveira.jpg',
+      profileImage: '/member-rafael-oliveira.jpg',
       url: 'https://rafaeloliveiradesign.com/',
       name: 'Rafael Oliveira',
       facebook: 'https://www.facebook.com/RafaelOliveira.x',
       instagram: 'https://www.instagram.com/rafael_olivra/',
     },
     {
-      profileImage: '/../public/member-hugo-ferraz.jpg',
+      profileImage: '/member-hugo-ferraz.jpg',
       name: 'Hugo Ferraz',
       url: 'https://www.facebook.com/hugo.ferraz.92',
       facebook: 'https://www.facebook.com/hugo.ferraz.92',
       instagram: 'https://www.instagram.com/hugo_ferz/',
     },
     {
-      profileImage: '/../public/member-david-dias.jpg',
+      profileImage: '/member-david-dias.jpg',
       name: 'David Dias',
       url: 'https://www.facebook.com/DaviddiasBatera',
       facebook: 'https://www.facebook.com/DaviddiasBatera',
