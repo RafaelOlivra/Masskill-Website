@@ -23,10 +23,10 @@ const Header = () => {
         e.preventDefault()
         const targetSection = document.getElementById(urlHash.replace('#', ''))
         if (targetSection) {
-          toggleMenu(false)
           targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' })
         }
       }
+      toggleMenu(false)
     }
   }
 
