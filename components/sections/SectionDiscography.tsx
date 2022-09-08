@@ -4,7 +4,7 @@ import Spotify from 'react-spotify-player'
 import AlbumItem, { AlbumProps } from '../AlbumItem'
 
 import bootstrapStyles from '../../styles/Bootstrap.module.css'
-import pageStyles from '../../styles/Pages.module.css'
+import pageStyles from '../../styles/Page.module.css'
 import styles from '../../styles/sections/SectionDiscography.module.css'
 
 const SectionDiscography: React.FC = () => {

@@ -9,6 +9,12 @@
   margin-bottom: calc(var(--df-margin-unit) * 2);
 }
 
+.template-default,
+.template-fullwidth,
+.page-content {
+  width: 100%;
+}
+
 .section-heading {
   display: flex;
   justify-content: space-between;
