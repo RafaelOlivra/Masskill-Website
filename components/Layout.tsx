@@ -74,11 +74,11 @@ const Footer = () => {
   const FeaturedBackgrounds = () => {
 
     const bgs: any = {
+      'bg-the-cycle.jpg': 'The Cycle EP',
       'bg-foto-1.jpg': 'Masskill Band',
       'bg-scream-in-vain.jpg': 'Scream in Vain',
       'bg-blurry-visions-single.jpg': 'Blurry Visions Single',
       'bg-foto-2.jpg': 'Masskill Band',
-      'bg-the-cycle.jpg': 'The Cycle EP',
       'bg-down-society.jpg': 'Down Society Bg',
     }
 
