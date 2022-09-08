@@ -13,27 +13,27 @@ const SectionDiscography: React.FC = () => {
 
     const availableAlbums: albumsList = [
         {
-            coverUrl: '/../public/capa-the-cycle-ep.jpg',
+            coverUrl: '/capa-the-cycle-ep.jpg',
             title: 'The Cycle EP',
             date: 2020,
             spotifyUrl: 'https://open.spotify.com/album/2rncJ3kK5FTTnjRlqdrgkp?si=7GVNieDBQq2qEi2-VIcJRA&dl_branch=1&nd=1'
         },
         {
-            coverUrl: '/../public/capa-the-cycle-single.jpg',
+            coverUrl: '/capa-the-cycle-single.jpg',
             title: 'Down Society Single',
             date: 2020,
             spotifyUrl: 'https://open.spotify.com/album/30dMGalxc741B0k5lDZ14S?si=D2p-Pw5NRaKYLXCvKPIOig&dl_branch=1&nd=1'
 
         },
         {
-            coverUrl: '/../public/capa-blurry-visions-single.jpg',
+            coverUrl: '/capa-blurry-visions-single.jpg',
             title: 'Blury Visions Single',
             date: 2020,
             spotifyUrl: 'https://open.spotify.com/album/1AeqOPA5uSBpRNy6JmWgn7?si=vIW69LXIQ4iu-HlaaDs0bg&dl_branch=1&nd=1'
 
         },
         {
-            coverUrl: '/../public/capa-scream-in-vain.jpg',
+            coverUrl: '/capa-scream-in-vain.jpg',
             title: 'Scream in Vain Single',
             date: 2018,
             spotifyUrl: 'https://open.spotify.com/album/6XCNQca8DDGJGoHYdLvfja?si=iF2aehexTN66xtKHepJRZw&dl_branch=1&nd=1'
