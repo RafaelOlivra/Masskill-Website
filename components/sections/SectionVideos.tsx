@@ -63,10 +63,16 @@ const SectionVideos: React.FC = () => {
     // Set the amount of slider to show based on window size
     const [slidesToShow, setSlidesToShow] = useState(3);
     useEffect(() => {
-        if (typeof window !== 'undefined' && window.innerWidth < 800) {
-            setSlidesToShow(2);
+        let slidesToShow = 3
+        if (typeof window !== 'undefined') {
+            if (window.innerWidth < 440) {
+                slidesToShow = 1
+            } else if (window.innerWidth < 800) {
+                slidesToShow = 2
+            }
         }
-    }, []);
+        setSlidesToShow(slidesToShow)
+    }, [currentFeaturedVideo]);
 
     return (
         <section className={styles['videos']} id="videos">
