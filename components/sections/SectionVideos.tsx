@@ -92,7 +92,7 @@ const SectionVideos: React.FC = () => {
                         </div>
                         <div className={styles['videos-carousel']}>
                             <div className={styles['holder']}>
-                                {availableVideos.length > 0 &&
+                                {availableVideos.length > 0 ? (
                                     <Carousel
                                         slidesToShow={slidesToShow}
                                         defaultControlsConfig={{
@@ -116,10 +116,9 @@ const SectionVideos: React.FC = () => {
                                                 </div>)
                                         })}
                                     </Carousel>
-                                }
-                                {availableVideos.length === 0 &&
+                                ) : (
                                     <p>Não há vídeos no momento.</p>
-                                }
+                                )}
                             </div>
                         </div>
                     </div>

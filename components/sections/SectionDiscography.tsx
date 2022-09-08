@@ -73,7 +73,7 @@ const SectionDiscography: React.FC = () => {
                         </div>
 
                         <div className={bootstrapStyles['row']}>
-                            {availableAlbums.length > 0 &&
+                            {availableAlbums.length > 0 ? (
                                 <>
                                     <div className={bootstrapStyles['col-lg-6']}>
                                         <div className="albums-holder">
@@ -94,12 +94,11 @@ const SectionDiscography: React.FC = () => {
                                         <SpotifyEmbed />
                                     </div>
                                 </>
-                            }
-                            {availableAlbums.length === 0 &&
+                            ) : (
                                 <div className={bootstrapStyles['col-lg-12']}>
                                     <p>Não há items para serem exibidos momento.</p>
                                 </div>
-                            }
+                            )}
                         </div>
 
                     </div>

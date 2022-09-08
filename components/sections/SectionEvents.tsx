@@ -23,17 +23,18 @@ const SectionEvents: React.FC = () => {
             </div>
 
             <div className={styles['events-holder']}>
-              {availableEvents.length > 0 && availableEvents.map((EventProps, index) => {
-                return (
-                  <EventItem
-                    key={index}
-                    {...EventProps}
-                  />
-                )
-              })}
-              {availableEvents.length === 0 &&
+              {availableEvents.length > 0 ? (
+                availableEvents.map((EventProps, index) => {
+                  return (
+                    <EventItem
+                      key={index}
+                      {...EventProps}
+                    />
+                  )
+                })
+              ) : (
                 <p>Não há shows marcados no momento.</p>
-              }
+              )}
             </div>
           </div>
         </div>
