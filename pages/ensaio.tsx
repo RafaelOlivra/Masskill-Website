@@ -23,8 +23,6 @@ interface Props {
 
 const Page: NextPage<Props> = ({ tracks }) => {
 
-  console.log(tracks)
-
   return (
     <main className={pageStyles['page-holder']}>
       <Head>
