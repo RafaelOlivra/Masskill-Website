@@ -43,7 +43,6 @@ const SectionGallery: React.FC<galleryImagesList> = ({ galleryImages }) => {
                                         }}
                                         pauseOnHover={true}
                                         autoplay={true}
-                                        animation='fade'
                                         enableKeyboardControls={true}
                                         wrapAround={true}
                                     >
