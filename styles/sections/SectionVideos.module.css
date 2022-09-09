@@ -15,6 +15,13 @@
 
 .slide-item {
     padding: 1.5rem 1.5rem 3rem;
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: center;
+}
+
+.slide-item>* {
+    margin: 0 auto !important;
 }
 
 .carousel-prev-button,
@@ -39,6 +46,42 @@
 
 .carousel-paging-dots {
     top: 1rem !important;
+}
+
+@media (min-width: 580px) {
+    .slide-item {
+        width: 14.7em;
+    }
+}
+
+@media (min-width: 800px) {
+    .slide-item {
+        width: 13.2em;
+    }
+}
+
+@media (min-width: 992px) {
+    .slide-item {
+        width: 31.3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .slide-item {
+        width: 37.3rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .slide-item {
+        width: 39rem;
+    }
+}
+
+@media (min-width: 1600px) {
+    .slide-item {
+        width: 45rem;
+    }
 }
 
 @media (max-width: 1280px) {
@@ -85,6 +128,10 @@
 }
 
 @media (max-width: 440px) {
+
+    .slide-item {
+        width: 32rem;
+    }
 
     .carousel-prev-button,
     .carousel-next-button {
