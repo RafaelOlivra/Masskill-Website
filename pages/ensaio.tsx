@@ -69,7 +69,8 @@ const Page: NextPage<Props> = ({ tracks }) => {
 export default Page
 
 export async function getStaticProps() {
-  const assetsUrl = '/tracks'
+  // Tracks are hosted on an external server
+  const assetsUrl = 'https://static.masskill.com.br/assets/tracks'
   const tracks: trackList = [
     {
       url: assetsUrl + "/Blurry Visions-C Tuning.mp3",
