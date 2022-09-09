@@ -1,0 +1,87 @@
+.slide-item {
+    padding: 0;
+    height: auto;
+    overflow: hidden;
+    border-radius: var(--df-border-radius);
+    background: var(--dark-bg-color);
+}
+
+.carousel-prev-button,
+.carousel-next-button {
+    position: relative;
+    display: block;
+    font-size: 0;
+    color: transparent !important;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'%3E%3Cpath fill='%23fff' d='M105.5 3.2L35.8 75l69.8 71.8 8.7-9L53.2 75l61.1-62.8z'/%3E%3C/svg%3E") no-repeat center !important;
+    width: 7rem;
+    height: 4rem;
+    padding: 0 !important;
+    transform: scale(.8);
+    left: -9.5rem;
+}
+
+.carousel-next-button {
+    left: auto;
+    right: -9.5rem;
+    transform: scale(.8) scaleX(-1);
+}
+
+.carousel-paging-dots {
+    top: 4rem !important;
+}
+
+@media (max-width: 1280px) {
+
+    .carousel-prev-button,
+    .carousel-next-button {
+        transform: scale(.8);
+        left: -6.5rem;
+    }
+
+    .carousel-next-button {
+        left: auto;
+        right: -6.5rem;
+        transform: scale(.8) scaleX(-1);
+    }
+}
+
+@media (max-width: 1100px) {
+
+    .carousel-prev-button,
+    .carousel-next-button {
+        transform: scale(.6);
+        left: -6rem;
+    }
+
+    .carousel-next-button {
+        left: auto;
+        right: -6rem;
+        transform: scale(.6) scaleX(-1);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .carousel-prev-button,
+    .carousel-next-button {
+        left: -1.5rem;
+    }
+
+    .carousel-next-button {
+        left: auto;
+        right: -1.5rem;
+    }
+}
+
+@media (max-width: 440px) {
+
+    .carousel-prev-button,
+    .carousel-next-button {
+        left: -2rem;
+    }
+
+    .carousel-next-button {
+        left: auto;
+        right: -2rem;
+    }
+}
