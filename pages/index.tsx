@@ -3,15 +3,20 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import pageStyles from '../styles/Page.module.css'
 
+import { readdirSync } from 'fs'
+import path from 'path'
+
 import SubHeader from '../components/SubHeader'
 import PageContent from '../components/PageContent';
 import SectionVideos from '../components/sections/SectionVideos'
 import SectionDiscography from '../components/sections/SectionDiscography'
 import SectionEvents from '../components/sections/SectionEvents'
 import SectionAbout from '../components/sections/SectionAbout'
+import SectionGallery, { galleryImagesList, GalleryImage } from '../components/sections/SectionGallery'
 import SectionContact from '../components/sections/SectionContact'
 
-const Home: NextPage = () => {
+const Home: NextPage<galleryImagesList> = ({ galleryImages }) => {
+
   return (
     <main className={styles['page-holder']}>
       <Head>
@@ -24,10 +29,11 @@ const Home: NextPage = () => {
         <SubHeader>
           <h1 className={pageStyles['page-title']}>Novo single “Blurry Visions” está disponível!</h1>
         </SubHeader>
-        
+
         <SectionVideos />
         <SectionDiscography />
         <SectionEvents />
+        <SectionGallery galleryImages={galleryImages} />
         <SectionAbout />
         <SectionContact />
       </PageContent>
@@ -37,3 +43,26 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export async function getStaticProps() {
+
+  // Grab gallery images from public/gallery dir
+  const assetsDir = path.join(process.cwd(), 'public')
+  let galleryImages: GalleryImage[] = []
+  try {
+    const imageFiles = readdirSync(assetsDir + '/gallery/')
+    imageFiles.forEach(file => {
+      // Only JPG images for now
+      if (file.endsWith('.jpg') || file.endsWith('.jpeg')) {
+        galleryImages.push({
+          src: '/gallery/' + file,
+          alt: 'Masskill Band'
+        })
+      }
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  return { props: { galleryImages: galleryImages } }
+}

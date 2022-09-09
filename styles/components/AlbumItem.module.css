@@ -30,6 +30,7 @@
 .album-item .meta-data .title {
     font-size: 3rem;
     color: var(--text-color);
+    line-height: 1.2;
     font-weight: bold;
     margin-bottom: 0;
 }
