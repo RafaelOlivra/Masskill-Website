@@ -80,7 +80,7 @@ const SectionVideos: React.FC = () => {
                 <div className={bootstrapStyles['row']}>
                     <div className={bootstrapStyles['col-lg-12']}>
 
-                        <div className={utilsStyles['text-center'] + styles['featured-video-holder']}>
+                        <div className={utilsStyles['text-center'] + ' ' + styles['featured-video-holder']}>
                             <div id="featured-video-holder" className={styles['video-holder']}>
                                 <FeaturedVideo />
                             </div>

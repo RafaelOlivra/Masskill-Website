@@ -1,5 +1,5 @@
-.featured-video-holder .video-holder {
-    margin-top: calc(var(--df-margin-unit) * 2);
+.featured-video-holder {
+    padding-top: var(--df-margin-unit);
 }
 
 .videos-carousel .holder {

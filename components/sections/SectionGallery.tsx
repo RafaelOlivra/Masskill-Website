@@ -6,7 +6,6 @@ import Carousel from 'nuka-carousel'
 import bootstrapStyles from '../../styles/Bootstrap.module.css'
 import pageStyles from '../../styles/Page.module.css'
 import styles from '../../styles/sections/SectionGallery.module.css'
-
 export interface GalleryImage {
     src: string,
     alt: string
@@ -18,7 +17,7 @@ export type galleryImagesList = {
 
 const SectionGallery: React.FC<galleryImagesList> = ({ galleryImages }) => {
     return (
-        <section className={styles['gallery']} id="gallery">
+        <section className={styles['gallery']} id="galeria">
             <div className={bootstrapStyles['container']}>
                 <div className={bootstrapStyles['row']}>
                     <div className={bootstrapStyles['col-lg-12']}>
@@ -45,6 +44,7 @@ const SectionGallery: React.FC<galleryImagesList> = ({ galleryImages }) => {
                                         pauseOnHover={true}
                                         autoplay={true}
                                         animation='fade'
+                                        enableKeyboardControls={true}
                                     >
                                         {galleryImages.map((GalleryImage, index) => {
                                             return (

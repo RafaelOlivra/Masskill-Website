@@ -23,7 +23,7 @@ const Header = () => {
         e.preventDefault()
         const targetSection = document.getElementById(urlHash.replace('#', ''))
         if (targetSection) {
-          targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
         }
       }
       toggleMenu(false)
@@ -41,6 +41,7 @@ const Header = () => {
                 <li><Link href="/#videos" passHref><a onClick={(e) => handleScrollToSection(e)}>Videos</a></Link></li>
                 <li><Link href="/#discografia" passHref><a onClick={(e) => handleScrollToSection(e)}>Discografia</a></Link></li>
                 <li><Link href="/#shows" passHref><a onClick={(e) => handleScrollToSection(e)}>Shows</a></Link></li>
+                <li><Link href="/#galeria" passHref><a onClick={(e) => handleScrollToSection(e)}>Galeria</a></Link></li>
                 <li><Link href="/#sobre" passHref><a onClick={(e) => handleScrollToSection(e)}>Sobre</a></Link></li>
                 <li><Link href="/#contato" passHref><a onClick={(e) => handleScrollToSection(e)}>Contato</a></Link></li>
               </ul>
