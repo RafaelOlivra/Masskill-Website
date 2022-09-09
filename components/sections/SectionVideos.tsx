@@ -56,10 +56,6 @@ const SectionVideos: React.FC = () => {
             <ResponsiveVideo url={currentFeaturedVideo.url} title={currentFeaturedVideo.title} /> : <div className='loading'>Loading...</div>
     }
 
-    if (typeof window !== 'undefined') {
-        // detect window screen width function
-    }
-
     // Set the amount of slider to show based on window size
     const [slidesToShow, setSlidesToShow] = useState(3);
     useEffect(() => {
@@ -73,7 +69,6 @@ const SectionVideos: React.FC = () => {
         }
         setSlidesToShow(slidesToShow)
     }, [currentFeaturedVideo]);
-
     return (
         <section className={styles['videos']} id="videos">
             <div className={bootstrapStyles['container']}>

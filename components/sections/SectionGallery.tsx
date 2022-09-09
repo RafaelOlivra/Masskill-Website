@@ -45,6 +45,7 @@ const SectionGallery: React.FC<galleryImagesList> = ({ galleryImages }) => {
                                         autoplay={true}
                                         animation='fade'
                                         enableKeyboardControls={true}
+                                        wrapAround={true}
                                     >
                                         {galleryImages.map((GalleryImage, index) => {
                                             return (
