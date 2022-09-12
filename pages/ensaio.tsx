@@ -39,20 +39,23 @@ const Page: NextPage<Props> = ({ tracks }) => {
         <div className="track-list-holder">
           <div className={bootstrapStyles['row'] + ' ' + utilsStyles['align-items-center']}>
             {
-              tracks.map(track => {
+              tracks.map((track, index) => {
                 return (
-                  <>
-                    <div className={bootstrapStyles['col-lg-6'] + ' ' + utilsStyles['text-center-mb']}>
-                      <h2 className='h3'>{track.title}</h2>
+                  <div key={index} className={bootstrapStyles['col-lg-12']}>
+                    <div className={bootstrapStyles['row']}>
+                      <div className={bootstrapStyles['col-lg-6'] + ' ' + utilsStyles['text-center-mb']}>
+                        <h2 className='h3'>{track.title}</h2>
+                      </div>
+                      <div className={bootstrapStyles['col-lg-6'] + ' ' + utilsStyles['text-center']}>
+                        <ReactAudioPlayer
+                          src={track.url}
+                          className={utilsStyles['fullwidth']}
+                          autoPlay
+                          controls
+                        />
+                      </div>
                     </div>
-                    <div className={bootstrapStyles['col-lg-6'] + ' ' + utilsStyles['text-center']}>
-                      <ReactAudioPlayer
-                        src={track.url}
-                        autoPlay
-                        controls
-                      />
-                    </div>
-                  </>
+                  </div>
                 )
               })
             }
