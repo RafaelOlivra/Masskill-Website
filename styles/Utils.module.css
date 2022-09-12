@@ -268,8 +268,14 @@ figure.no-mg-margin-bottom {
   border-radius: var(--df-border-radius) !important;
 }
 
-.full-height {
+.full-height,
+.fullheight {
   height: 100%;
+}
+
+.full-width,
+.fullwidth {
+  width: 100%;
 }
 
 .z-index-1 {

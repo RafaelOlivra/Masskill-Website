@@ -56,17 +56,46 @@ const SectionVideos: React.FC = () => {
             <ResponsiveVideo url={currentFeaturedVideo.url} title={currentFeaturedVideo.title} /> : <div className='loading'>Loading...</div>
     }
 
-    // Set the amount of slider to show based on window size
+    /** 
+     * Track window resize and check if we are with certain width breakpoints
+     * We then use the breakpoint to define how much video slides to show
+     * on the carousel slider
+     */
+    let previousBreakPointWidth = 992
+    const [currentBreakPointWidth, setCurrentBreakpointWidth] = useState<number>(992);
+    const handleResize = () => {
+        let BreakPointWidth = 992
+
+        if (window.innerWidth < 440) {
+            BreakPointWidth = 440
+        } else if (window.innerWidth < 800) {
+            BreakPointWidth = 800
+        }
+
+        // Only change when needed to avoid unnecessary rerenders
+        if (BreakPointWidth !== previousBreakPointWidth) {
+            setCurrentBreakpointWidth(BreakPointWidth)
+            previousBreakPointWidth = BreakPointWidth
+        }
+    }
+    useEffect(() => {
+        window.addEventListener("resize", handleResize, false);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    // Set the amount of slider to show based on the current breakpoint width
     const [slidesToShow, setSlidesToShow] = useState<number>(1);
     useEffect(() => {
+        console.log(currentBreakPointWidth)
         let slidesToShow = 3
-        if (window.innerWidth < 440) {
+        if (currentBreakPointWidth == 440) {
             slidesToShow = 1
-        } else if (window.innerWidth < 800) {
+        } else if (currentBreakPointWidth == 800) {
             slidesToShow = 2
         }
         setSlidesToShow(slidesToShow)
-    }, [currentFeaturedVideo]);
+    }, [currentBreakPointWidth]);
+
     return (
         <section className={styles['videos']} id="videos">
             <div className={bootstrapStyles['container']}>
