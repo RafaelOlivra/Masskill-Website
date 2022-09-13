@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import ResponsiveVideo, { ResponsiveVideoProps } from '../ResponsiveVideo';
 
 import Carousel from 'nuka-carousel'
@@ -61,8 +61,8 @@ const SectionVideos: React.FC = () => {
      * We then use the breakpoint to define how much video slides to show
      * on the carousel slider
      */
-    let previousBreakPointWidth = 992
-    const [currentBreakPointWidth, setCurrentBreakpointWidth] = useState<number>(992);
+    let previousBreakPointWidth = 440
+    const [slidesToShow, setSlidesToShow] = useState<number>(1);
     const handleResize = () => {
         let BreakPointWidth = 992
 
@@ -74,27 +74,26 @@ const SectionVideos: React.FC = () => {
 
         // Only change when needed to avoid unnecessary rerenders
         if (BreakPointWidth !== previousBreakPointWidth) {
-            setCurrentBreakpointWidth(BreakPointWidth)
             previousBreakPointWidth = BreakPointWidth
+
+            console.log(BreakPointWidth);
+
+            // Set the amount of slider to show based on the current breakpoint width
+            let slidesToShow = 3
+            if (BreakPointWidth == 440) {
+                slidesToShow = 1
+            } else if (BreakPointWidth == 800) {
+                slidesToShow = 2
+            }
+            setSlidesToShow(slidesToShow)
         }
+
     }
     useEffect(() => {
         window.addEventListener("resize", handleResize, false);
+        handleResize()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
-    // Set the amount of slider to show based on the current breakpoint width
-    const [slidesToShow, setSlidesToShow] = useState<number>(1);
-    useEffect(() => {
-        console.log(currentBreakPointWidth)
-        let slidesToShow = 3
-        if (currentBreakPointWidth == 440) {
-            slidesToShow = 1
-        } else if (currentBreakPointWidth == 800) {
-            slidesToShow = 2
-        }
-        setSlidesToShow(slidesToShow)
-    }, [currentBreakPointWidth]);
 
     return (
         <section className={styles['videos']} id="videos">
