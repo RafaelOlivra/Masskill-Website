@@ -31,7 +31,7 @@ const SectionEvents: React.FC = () => {
                 events.map((EventProps, index) => {
                   return (
                     <EventItem
-                      key={index}
+                      key={`unique_${index}`}
                       {...EventProps}
                     />
                   )

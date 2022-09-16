@@ -90,7 +90,7 @@ const SectionDiscography: React.FC = () => {
                                             {albums.map((AlbumProps, index) => {
                                                 return (
                                                     <AlbumItem
-                                                        key={index}
+                                                        key={`unique_${index}`}
                                                         {...AlbumProps}
                                                         spotifyUrl='https://open.spotify.com/album/2rncJ3kK5FTTnjRlqdrgkp?si=7GVNieDBQq2qEi2-VIcJRA&dl_branch=1&nd=1'
                                                         onClick={(e) => {

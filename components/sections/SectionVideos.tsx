@@ -121,7 +121,7 @@ const VideosCarousel: React.FC<VideosCarouselProps> = ({ videos, onSlideItemClic
                     >
                         {videos.map((ResponsiveVideoProps, index) => {
                             return (
-                                <div key={index} className={styles['slide-item']}>
+                                <div key={`unique_${index}`} className={styles['slide-item']}>
                                     <ResponsiveVideo
                                         {...ResponsiveVideoProps}
                                         onClick={(e, video) => onSlideItemClick ? onSlideItemClick(e, video) : ''}

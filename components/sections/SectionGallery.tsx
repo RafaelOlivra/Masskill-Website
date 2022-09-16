@@ -48,7 +48,7 @@ const SectionGallery: React.FC<galleryImagesList> = ({ galleryImages }) => {
                                     >
                                         {galleryImages.map((GalleryImage, index) => {
                                             return (
-                                                <div key={index} className={styles['slide-item']}>
+                                                <div key={`unique_${index}`} className={styles['slide-item']}>
                                                     <Image
                                                         {...GalleryImage}
                                                         alt={GalleryImage.alt}
