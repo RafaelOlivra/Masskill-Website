@@ -6,11 +6,8 @@ import utilsStyles from '../../styles/Utils.module.css'
 import pageStyles from '../../styles/Page.module.css'
 import styles from '../../styles/sections/SectionAbout.module.css'
 
-const SectionAbout: React.FC = () => {
-
-  type bandMembersList = BandMemberBoxProps[] | [];
-
-  const bandMembers: bandMembersList = [
+const useBandMembers = () => {
+  const bandMembers: BandMemberBoxProps[] = [
     {
       profileImage: '/member-giovanni-di-genova.jpg',
       name: 'Giovani Di Genova',
@@ -39,7 +36,14 @@ const SectionAbout: React.FC = () => {
       facebook: 'https://www.facebook.com/DaviddiasBatera',
       instagram: 'https://www.instagram.com/dave.d_x/',
     },
-  ];
+  ]
+
+  return { bandMembers }
+}
+
+const SectionAbout: React.FC = () => {
+
+  const { bandMembers } = useBandMembers()
 
   return (
     <section className={styles['about']} id="sobre">
@@ -56,7 +60,7 @@ const SectionAbout: React.FC = () => {
               {bandMembers.length > 0 && bandMembers.map((BandMemberBoxProps, index) => {
                 return (
                   <BandMemberBox
-                    key={index}
+                    key={`unique_${index}`}
                     {...BandMemberBoxProps}
                   />
                 )

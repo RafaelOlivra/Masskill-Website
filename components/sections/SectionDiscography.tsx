@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import Spotify from 'react-spotify-player'
 import AlbumItem, { AlbumProps } from '../AlbumItem'
@@ -7,11 +7,8 @@ import bootstrapStyles from '../../styles/Bootstrap.module.css'
 import pageStyles from '../../styles/Page.module.css'
 import styles from '../../styles/sections/SectionDiscography.module.css'
 
-const SectionDiscography: React.FC = () => {
-
-    type albumsList = AlbumProps[] | [];
-
-    const availableAlbums: albumsList = [
+const useAlbums = () => {
+    const albums: AlbumProps[] = [
         {
             coverUrl: '/capa-the-cycle-ep.jpg',
             title: 'The Cycle EP',
@@ -39,16 +36,20 @@ const SectionDiscography: React.FC = () => {
             spotifyUrl: 'https://open.spotify.com/album/6XCNQca8DDGJGoHYdLvfja?si=iF2aehexTN66xtKHepJRZw&dl_branch=1&nd=1'
 
         }
-    ];
+    ]
 
+    return { albums }
+}
 
-    // Handle the Spotify embed widget
-    const [currentSpotifyEmbedUrl, updateSpotifyEmbed] = useState(availableAlbums[0].spotifyUrl);
+const useSpotifyEmbed = () => {
+    const [currentSpotifyEmbedUrl, updateCurrentSpotifyEmbed] = useState<string>('')
+    const SpotifyEmbed = () => {
+        return (currentSpotifyEmbedUrl) ? <Spotify uri={currentSpotifyEmbedUrl} size="large" view="coverart" /> : <div className='loading'>Carregando...</div>
+    }
 
-    const handleSpotifyEmbedUpdate = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, spotifyUrl: string) => {
+    const handleSpotifyEmbedUpdate = (spotifyUrl: string) => {
         if (spotifyUrl) {
-            e.preventDefault();
-            updateSpotifyEmbed(spotifyUrl);
+            updateCurrentSpotifyEmbed(spotifyUrl)
 
             const section = document.getElementById('spotify-player');
             if (section) {
@@ -57,9 +58,18 @@ const SectionDiscography: React.FC = () => {
         }
     }
 
-    const SpotifyEmbed = () => {
-        return (currentSpotifyEmbedUrl) ? <Spotify uri={currentSpotifyEmbedUrl} size="large" view="coverart" /> : <div className='loading'>Loading...</div>
-    }
+    return { currentSpotifyEmbedUrl, handleSpotifyEmbedUpdate, SpotifyEmbed }
+}
+
+const SectionDiscography: React.FC = () => {
+
+    const { albums } = useAlbums()
+    const { currentSpotifyEmbedUrl, handleSpotifyEmbedUpdate, SpotifyEmbed } = useSpotifyEmbed()
+
+    useEffect(() => {
+        handleSpotifyEmbedUpdate(albums[0].spotifyUrl)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <section className={styles['discography']} id="discografia">
@@ -73,17 +83,22 @@ const SectionDiscography: React.FC = () => {
                         </div>
 
                         <div className={bootstrapStyles['row']}>
-                            {availableAlbums.length > 0 ? (
+                            {albums.length > 0 ? (
                                 <>
                                     <div className={bootstrapStyles['col-lg-6']}>
                                         <div className="albums-holder">
-                                            {availableAlbums.map((AlbumProps, index) => {
+                                            {albums.map((AlbumProps, index) => {
                                                 return (
                                                     <AlbumItem
                                                         key={index}
                                                         {...AlbumProps}
                                                         spotifyUrl='https://open.spotify.com/album/2rncJ3kK5FTTnjRlqdrgkp?si=7GVNieDBQq2qEi2-VIcJRA&dl_branch=1&nd=1'
-                                                        onClick={(e) => { handleSpotifyEmbedUpdate(e, AlbumProps.spotifyUrl) }}
+                                                        onClick={(e) => {
+                                                            if (AlbumProps.spotifyUrl) {
+                                                                e.preventDefault()
+                                                                handleSpotifyEmbedUpdate(AlbumProps.spotifyUrl)
+                                                            }
+                                                        }}
                                                         isActive={currentSpotifyEmbedUrl === AlbumProps.spotifyUrl}
                                                     />
                                                 )

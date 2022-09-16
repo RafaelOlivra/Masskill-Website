@@ -11,8 +11,8 @@ export interface GalleryImage {
     alt: string
 }
 
-export type galleryImagesList = {
-    galleryImages: GalleryImage[] | []
+type galleryImagesList = {
+    galleryImages: GalleryImage[]
 };
 
 const SectionGallery: React.FC<galleryImagesList> = ({ galleryImages }) => {

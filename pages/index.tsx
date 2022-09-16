@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import pageStyles from '../styles/Page.module.css'
@@ -12,10 +12,14 @@ import SectionVideos from '../components/sections/SectionVideos'
 import SectionDiscography from '../components/sections/SectionDiscography'
 import SectionEvents from '../components/sections/SectionEvents'
 import SectionAbout from '../components/sections/SectionAbout'
-import SectionGallery, { galleryImagesList, GalleryImage } from '../components/sections/SectionGallery'
+import SectionGallery, { GalleryImage } from '../components/sections/SectionGallery'
 import SectionContact from '../components/sections/SectionContact'
 
-const Home: NextPage<galleryImagesList> = ({ galleryImages }) => {
+interface Props {
+  galleryImages: GalleryImage[]
+}
+
+const Home: NextPage<Props> = ({ galleryImages }) => {
 
   return (
     <main className={styles['page-holder']}>
@@ -44,7 +48,7 @@ const Home: NextPage<galleryImagesList> = ({ galleryImages }) => {
 
 export default Home
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps<Props> = async () => {
 
   // Grab gallery images from public/gallery dir
   const assetsDir = path.join(process.cwd(), 'public')

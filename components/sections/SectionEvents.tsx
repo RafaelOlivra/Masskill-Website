@@ -6,10 +6,14 @@ import utilsStyles from '../../styles/Utils.module.css'
 import pageStyles from '../../styles/Page.module.css'
 import styles from '../../styles/sections/SectionEvents.module.css'
 
+const useEvents = () => {
+  const events: EventProps[] = []
+  return { events }
+}
+
 const SectionEvents: React.FC = () => {
 
-  type eventsList = EventProps[] | [];
-  const availableEvents: eventsList = [];
+  const { events } = useEvents()
 
   return (
     <section className={styles['events']} id="shows">
@@ -23,8 +27,8 @@ const SectionEvents: React.FC = () => {
             </div>
 
             <div className={styles['events-holder']}>
-              {availableEvents.length > 0 ? (
-                availableEvents.map((EventProps, index) => {
+              {events.length > 0 ? (
+                events.map((EventProps, index) => {
                   return (
                     <EventItem
                       key={index}

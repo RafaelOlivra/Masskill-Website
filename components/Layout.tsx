@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useCallback } from 'react'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -87,7 +87,7 @@ const Footer = () => {
 
     const [currentActiveBg, updateActiveBg] = useState(0)
 
-    const handleBgUpdate = () => {
+    const handleBgUpdate = useCallback(() => {
       setTimeout(() => {
         if (currentActiveBg > (bgCount - 2)) {
           updateActiveBg(0)
@@ -95,11 +95,11 @@ const Footer = () => {
           updateActiveBg(currentActiveBg + 1)
         }
       }, 10000)
-    }
+    }, [bgCount, currentActiveBg, updateActiveBg,])
 
     useEffect(() => {
       handleBgUpdate()
-    })
+    }, [handleBgUpdate])
 
     return (
       <>
