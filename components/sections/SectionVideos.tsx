@@ -1,8 +1,10 @@
 import React from 'react'
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import ResponsiveVideo, { ResponsiveVideoProps } from '../ResponsiveVideo';
 
 import Carousel from 'nuka-carousel'
+
+import { Audio as Loading } from 'react-loader-spinner'
 
 import bootstrapStyles from '../../styles/Bootstrap.module.css'
 import utilsStyles from '../../styles/Utils.module.css'
@@ -36,22 +38,29 @@ const useFeaturedVideo = () => {
     // Handle the featured video display
     const [currentFeaturedVideo, updateFeaturedVideo] = useState<ResponsiveVideoProps>();
 
-    const handleFeaturedVideoUpdate = (VideoProps: ResponsiveVideoProps) => {
+    const handleFeaturedVideoUpdate = (VideoProps: ResponsiveVideoProps, scrollIntoView: boolean = true) => {
         if (VideoProps) {
             if (!VideoProps.url.includes('?autoplay=1')) {
                 VideoProps.url += '?autoplay=1';
             }
             updateFeaturedVideo(VideoProps)
             const section = document.getElementById('featured-video-holder');
-            if (section) {
+            if (scrollIntoView && section) {
                 section.scrollIntoView({ behavior: 'smooth', block: 'center' })
             }
         }
     }
 
     const FeaturedVideo = () => {
-        return (currentFeaturedVideo) ?
-            <ResponsiveVideo url={currentFeaturedVideo.url} title={currentFeaturedVideo.title} /> : <div className='loading'>Carregando...</div>
+        return (currentFeaturedVideo)
+            ? <ResponsiveVideo url={currentFeaturedVideo.url} title={currentFeaturedVideo.title} />
+            : <Loading
+                height="80"
+                width="80"
+                color='white'
+                ariaLabel='three-dots-loading'
+                wrapperStyle={{ justifyContent: 'center' }}
+            />
     }
 
     return { currentFeaturedVideo, handleFeaturedVideoUpdate, FeaturedVideo }
@@ -143,7 +152,7 @@ const SectionVideos: React.FC = () => {
     const { handleFeaturedVideoUpdate, FeaturedVideo } = useFeaturedVideo()
 
     useEffect(() => {
-        handleFeaturedVideoUpdate(videos[0])
+        handleFeaturedVideoUpdate(videos[0], false)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

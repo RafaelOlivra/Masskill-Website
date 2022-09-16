@@ -3,6 +3,8 @@ import { useState } from 'react'
 import Spotify from 'react-spotify-player'
 import AlbumItem, { AlbumProps } from '../AlbumItem'
 
+import { Audio as Loading } from 'react-loader-spinner'
+
 import bootstrapStyles from '../../styles/Bootstrap.module.css'
 import pageStyles from '../../styles/Page.module.css'
 import styles from '../../styles/sections/SectionDiscography.module.css'
@@ -44,15 +46,23 @@ const useAlbums = () => {
 const useSpotifyEmbed = () => {
     const [currentSpotifyEmbedUrl, updateCurrentSpotifyEmbed] = useState<string>('')
     const SpotifyEmbed = () => {
-        return (currentSpotifyEmbedUrl) ? <Spotify uri={currentSpotifyEmbedUrl} size="large" view="coverart" /> : <div className='loading'>Carregando...</div>
+        return (currentSpotifyEmbedUrl)
+            ? <Spotify uri={currentSpotifyEmbedUrl} size="large" view="coverart" />
+            : <Loading
+                height="80"
+                width="80"
+                color='white'
+                ariaLabel='three-dots-loading'
+                wrapperStyle={{ justifyContent: 'center' }}
+            />
     }
 
-    const handleSpotifyEmbedUpdate = (spotifyUrl: string) => {
+    const handleSpotifyEmbedUpdate = (spotifyUrl: string, scrollIntoView: boolean = true) => {
         if (spotifyUrl) {
             updateCurrentSpotifyEmbed(spotifyUrl)
 
             const section = document.getElementById('spotify-player');
-            if (section) {
+            if (scrollIntoView && section) {
                 section.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
@@ -67,7 +77,7 @@ const SectionDiscography: React.FC = () => {
     const { currentSpotifyEmbedUrl, handleSpotifyEmbedUpdate, SpotifyEmbed } = useSpotifyEmbed()
 
     useEffect(() => {
-        handleSpotifyEmbedUpdate(albums[0].spotifyUrl)
+        handleSpotifyEmbedUpdate(albums[0].spotifyUrl, false)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
