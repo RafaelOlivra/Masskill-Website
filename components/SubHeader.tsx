@@ -11,19 +11,17 @@ type Props = {
 
 const SubHeader = ({ children }: Props) => {
   return (
-    <>
-      <section className={pageStyles['page-sub-header']}>
-        <div className={bootstrapStyles['container']}>
-          <div className={bootstrapStyles['row']}>
-            <div className={bootstrapStyles['col-lg-12']}>
-              <div className={utilsStyles['text-center']}>
-                {children}
-              </div>
+    <section className={pageStyles['page-sub-header']}>
+      <div className={bootstrapStyles['container']}>
+        <div className={bootstrapStyles['row']}>
+          <div className={bootstrapStyles['col-lg-12']}>
+            <div className={utilsStyles['text-center']}>
+              {children}
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }
 

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
@@ -32,7 +32,7 @@ const Page: NextPage<Props> = ({ source }) => {
 
 export default Page
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const pagesDir = path.join(process.cwd(), 'pages')
   const mdxContent = await fs.readFile(pagesDir + '/privacy-policy.mdx', 'utf8')
   const mdxSource = await serialize(mdxContent)

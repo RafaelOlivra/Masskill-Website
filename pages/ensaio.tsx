@@ -15,13 +15,36 @@ interface Track {
   title: string,
 }
 
-type trackList = Track[];
-
-interface Props {
-  tracks: trackList
+const useTracks = () => {
+  const assetsUrl = 'https://static.masskill.com.br/assets/tracks'
+  const tracks: Track[] = [
+    {
+      url: assetsUrl + "/Blurry Visions-C Tuning.mp3",
+      title: "Blurry Visions-C Tuning",
+    },
+    {
+      url: assetsUrl + "/Coronga Virus Demo-C Tuning.mp3",
+      title: "Coronga Virus Demo-C Tuning",
+    },
+    {
+      url: assetsUrl + "/plastic-sea-masskill-demo-(Arquitetura) - C Tuning.mp3",
+      title: "plastic-sea-masskill-demo-(Arquitetura) - C Tuning",
+    },
+    {
+      url: assetsUrl + "/Down Society-C Tuning.mp3",
+      title: "Down Society-C Tuning",
+    },
+    {
+      url: assetsUrl + "/Scream In Vain-C Tuning.mp3",
+      title: "Scream In Vain-C Tuning",
+    }
+  ]
+  return { tracks }
 }
 
-const Page: NextPage<Props> = ({ tracks }) => {
+const Page: NextPage = () => {
+
+  const { tracks } = useTracks()
 
   return (
     <main className={pageStyles['page-holder']}>
@@ -68,32 +91,3 @@ const Page: NextPage<Props> = ({ tracks }) => {
 }
 
 export default Page
-
-export async function getStaticProps() {
-  // Tracks are hosted on an external server
-  const assetsUrl = 'https://static.masskill.com.br/assets/tracks'
-  const tracks: trackList = [
-    {
-      url: assetsUrl + "/Blurry Visions-C Tuning.mp3",
-      title: "Blurry Visions-C Tuning",
-    },
-    {
-      url: assetsUrl + "/Coronga Virus Demo-C Tuning.mp3",
-      title: "Coronga Virus Demo-C Tuning",
-    },
-    {
-      url: assetsUrl + "/plastic-sea-masskill-demo-(Arquitetura) - C Tuning.mp3",
-      title: "plastic-sea-masskill-demo-(Arquitetura) - C Tuning",
-    },
-    {
-      url: assetsUrl + "/Down Society-C Tuning.mp3",
-      title: "Down Society-C Tuning",
-    },
-    {
-      url: assetsUrl + "/Scream In Vain-C Tuning.mp3",
-      title: "Scream In Vain-C Tuning",
-    }
-  ]
-
-  return { props: { tracks: tracks } }
-}

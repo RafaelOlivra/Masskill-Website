@@ -9,10 +9,8 @@ import utilsStyles from '../../styles/Utils.module.css'
 import pageStyles from '../../styles/Page.module.css'
 import styles from '../../styles/sections/SectionVideos.module.css'
 
-const SectionVideos: React.FC = () => {
-    type videosList = ResponsiveVideoProps[] | [];
-
-    const availableVideos: videosList = [
+const useVideos = () => {
+    const videos: ResponsiveVideoProps[] = [
         {
             url: 'https://www.youtube.com/embed/qQETNtcceuA',
             title: 'Masskill- Blury Visions (Official Music Video)',
@@ -29,17 +27,17 @@ const SectionVideos: React.FC = () => {
             url: 'https://www.youtube.com/embed/3JjDCL_B0_M',
             title: 'Masskill - The Cycle EP Solos (Guitar Playthrough)',
         },
-    ];
+    ]
 
+    return { videos }
+}
+
+const useFeaturedVideo = () => {
     // Handle the featured video display
-    const [currentFeaturedVideo, updateFeaturedVideo] = useState<ResponsiveVideoProps>({
-        url: availableVideos[0].url + '?autoplay=1',
-        title: availableVideos[0].title
-    });
+    const [currentFeaturedVideo, updateFeaturedVideo] = useState<ResponsiveVideoProps>();
 
-    const handleFeaturedVideoUpdate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, VideoProps: ResponsiveVideoProps) => {
+    const handleFeaturedVideoUpdate = (VideoProps: ResponsiveVideoProps) => {
         if (VideoProps) {
-            e.preventDefault()
             if (!VideoProps.url.includes('?autoplay=1')) {
                 VideoProps.url += '?autoplay=1';
             }
@@ -53,8 +51,18 @@ const SectionVideos: React.FC = () => {
 
     const FeaturedVideo = () => {
         return (currentFeaturedVideo) ?
-            <ResponsiveVideo url={currentFeaturedVideo.url} title={currentFeaturedVideo.title} /> : <div className='loading'>Loading...</div>
+            <ResponsiveVideo url={currentFeaturedVideo.url} title={currentFeaturedVideo.title} /> : <div className='loading'>Carregando...</div>
     }
+
+    return { currentFeaturedVideo, handleFeaturedVideoUpdate, FeaturedVideo }
+}
+
+// TODO: Break into a separate component
+interface VideosCarouselProps {
+    videos: ResponsiveVideoProps[],
+    onSlideItemClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>, video: ResponsiveVideoProps) => void
+}
+const VideosCarousel: React.FC<VideosCarouselProps> = ({ videos, onSlideItemClick }) => {
 
     /** 
      * Track window resize and check if we are with certain width breakpoints
@@ -63,7 +71,7 @@ const SectionVideos: React.FC = () => {
      */
     let previousBreakPointWidth = 440
     const [slidesToShow, setSlidesToShow] = useState<number>(1);
-    const handleResize = () => {
+    const handleWindowResize = () => {
         let BreakPointWidth = 992
 
         if (window.innerWidth < 440) {
@@ -76,8 +84,6 @@ const SectionVideos: React.FC = () => {
         if (BreakPointWidth !== previousBreakPointWidth) {
             previousBreakPointWidth = BreakPointWidth
 
-            console.log(BreakPointWidth);
-
             // Set the amount of slider to show based on the current breakpoint width
             let slidesToShow = 3
             if (BreakPointWidth == 440) {
@@ -89,11 +95,57 @@ const SectionVideos: React.FC = () => {
         }
 
     }
+
     useEffect(() => {
-        window.addEventListener("resize", handleResize, false);
-        handleResize()
+        window.addEventListener('resize', handleWindowResize, false);
+        handleWindowResize()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    return (
+        <div className={styles['videos-carousel']}>
+            <div className={styles['holder']}>
+                {videos.length > 0 ? (
+                    <Carousel
+                        slidesToShow={slidesToShow}
+                        defaultControlsConfig={{
+                            nextButtonClassName: styles['carousel-next-button'],
+                            nextButtonStyle: {},
+                            prevButtonClassName: styles['carousel-prev-button'],
+                            prevButtonStyle: {},
+                            pagingDotsContainerClassName: styles['carousel-paging-dots'],
+                            pagingDotsStyle: {
+                                fill: 'white'
+                            }
+                        }}
+                    >
+                        {videos.map((ResponsiveVideoProps, index) => {
+                            return (
+                                <div key={index} className={styles['slide-item']}>
+                                    <ResponsiveVideo
+                                        {...ResponsiveVideoProps}
+                                        onClick={(e, video) => onSlideItemClick ? onSlideItemClick(e, video) : ''}
+                                    />
+                                </div>)
+                        })}
+                    </Carousel>
+                ) : (
+                    <p>Não há vídeos no momento.</p>
+                )}
+            </div>
+        </div>
+    )
+
+}
+
+const SectionVideos: React.FC = () => {
+    const { videos } = useVideos()
+    const { handleFeaturedVideoUpdate, FeaturedVideo } = useFeaturedVideo()
+
+    useEffect(() => {
+        handleFeaturedVideoUpdate(videos[0])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <section className={styles['videos']} id="videos">
@@ -111,37 +163,10 @@ const SectionVideos: React.FC = () => {
                             <h2 className="title">Vídeos</h2>
                             <a href="https://www.youtube.com/channel/UChFFgMwNVouYPrE9oiI0sKQ" className={pageStyles['side-link']} target="_blank" rel="noreferrer">Todos os Vídeos</a>
                         </div>
-                        <div className={styles['videos-carousel']}>
-                            <div className={styles['holder']}>
-                                {availableVideos.length > 0 ? (
-                                    <Carousel
-                                        slidesToShow={slidesToShow}
-                                        defaultControlsConfig={{
-                                            nextButtonClassName: styles['carousel-next-button'],
-                                            nextButtonStyle: {},
-                                            prevButtonClassName: styles['carousel-prev-button'],
-                                            prevButtonStyle: {},
-                                            pagingDotsContainerClassName: styles['carousel-paging-dots'],
-                                            pagingDotsStyle: {
-                                                fill: 'white'
-                                            }
-                                        }}
-                                    >
-                                        {availableVideos.map((ResponsiveVideoProps, index) => {
-                                            return (
-                                                <div key={index} className={styles['slide-item']}>
-                                                    <ResponsiveVideo
-                                                        {...ResponsiveVideoProps}
-                                                        onClick={handleFeaturedVideoUpdate}
-                                                    />
-                                                </div>)
-                                        })}
-                                    </Carousel>
-                                ) : (
-                                    <p>Não há vídeos no momento.</p>
-                                )}
-                            </div>
-                        </div>
+                        <VideosCarousel videos={videos} onSlideItemClick={(e, video) => {
+                            e.preventDefault()
+                            handleFeaturedVideoUpdate(video)
+                        }} />
                     </div>
                 </div>
             </div>
