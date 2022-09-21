@@ -27,6 +27,7 @@ const Home: NextPage<Props> = ({ galleryImages }) => {
         <title>Banda Masskill - Site Oficial</title>
         <meta name="description" content="Masskill é uma banda Sorocabana de Metal fundada no ano de 2015. Iniciou suas atividades com uma proposta mais visceral, mas com o passar do tempo e com a entrada dos integrantes da formação atual, a banda está se desenvolvendo para chegar em uma sonoridade mais moderna e com sua identidade própria." />
         <link rel="icon" href="/favicon.png" />
+        <link rel="canonical" href="http://masskill.com.br/" />
       </Head>
 
       <PageContent template="fullwidth">

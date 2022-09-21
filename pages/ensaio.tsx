@@ -53,6 +53,7 @@ const Page: NextPage = () => {
         <meta name="description" content="Playlist Ensaio Masskill" />
         <link rel="icon" href="/favicon.png" />
         <meta name="robots" content="noindex"></meta>
+        <link rel="canonical" href="http://masskill.com.br/ensaio" />
       </Head>
 
       <PageContent>
