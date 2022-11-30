@@ -30,11 +30,11 @@ const useBandMembers = () => {
       instagram: 'https://www.instagram.com/hugo_ferz/',
     },
     {
-      profileImage: '/member-david-dias.jpg',
-      name: 'David Dias',
-      url: 'https://www.facebook.com/DaviddiasBatera',
-      facebook: 'https://www.facebook.com/DaviddiasBatera',
-      instagram: 'https://www.instagram.com/dave.d_x/',
+      profileImage: '/member-vinicius-prudencio.jpg',
+      name: 'Vinicius Prudêncio',
+      url: 'https://www.facebook.com/profile.php?id=100010831272976',
+      facebook: 'https://www.facebook.com/profile.php?id=100010831272976',
+      instagram: 'https://www.instagram.com/viniaprudencio/',
     },
   ]
 
