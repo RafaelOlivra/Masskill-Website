@@ -72,7 +72,7 @@ const SectionAbout: React.FC = () => {
 
             <div className={"content" + utilsStyles['df-mg-top']}>
               <p>Masskill é uma banda Sorocabana de Metal fundada no ano de 2015. Iniciou suas atividades com uma proposta mais visceral, mas com o passar do tempo e com a entrada dos integrantes da formação atual, a banda está se desenvolvendo para chegar em uma sonoridade mais moderna e com sua identidade própria.</p>
-              <p>Atualmente a banda conta com: Giovanni Di Genova (Voz/Guitarra), Rafael Oliveira (Guitarra), Hugo Ferraz (Baixo) e David Dias (Bateria). Formação que agora trabalha em novo material para lançar em breve.</p>
+              <p>Atualmente a banda conta com: Giovanni Di Genova (Voz/Guitarra), Rafael Oliveira (Guitarra), Hugo Ferraz (Baixo) e Vinicius Prudêncio (Bateria). Formação que agora trabalha em novo material para lançar em breve.</p>
             </div>
           </div>
         </div>
