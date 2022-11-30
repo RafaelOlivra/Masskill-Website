@@ -216,7 +216,7 @@ figure.no-mg-margin-bottom {
 }
 
 .text-white a:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .no-container .container {
@@ -243,11 +243,11 @@ figure.no-mg-margin-bottom {
 .img-full,
 .img-full figure,
 .img-full img,
-.img-full>div,
+.img-full > div,
 .is-style-img-full,
 .is-style-img-full figure,
 .is-style-img-full img,
-.is-style-img-full>div {
+.is-style-img-full > div {
   width: 100%;
   min-width: 100% !important;
   height: auto;
@@ -263,8 +263,8 @@ figure.no-mg-margin-bottom {
 }
 
 .rounded-df,
-.rounded-df>img,
-.rounded-df>figure>img {
+.rounded-df > img,
+.rounded-df > figure > img {
   border-radius: var(--df-border-radius) !important;
 }
 
@@ -344,8 +344,12 @@ figure.no-mg-margin-bottom {
   white-space: normal;
 }
 
-@media (min-width: 992px) {
+.d-block {
+  display: block;
+  width: 100%;
+}
 
+@media (min-width: 992px) {
   .mobile-only,
   .mb-only {
     display: none !important;
