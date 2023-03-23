@@ -32,7 +32,7 @@ const Home: NextPage<Props> = ({ galleryImages }) => {
 
       <PageContent template="fullwidth">
         <SubHeader>
-          <h1 className={pageStyles['page-title']}>Novo single “Blurry Visions” está disponível!</h1>
+          <h1 className={pageStyles['page-title']}>Assista agora o novo single <br/> “PLASTIC SEA”</h1>
         </SubHeader>
 
         <SectionVideos />

@@ -1,5 +1,6 @@
 .spotify-embed-holder iframe {
     border-radius: var(--df-border-radius);
+    background: transparent;
 }
 
 @media (max-width: 992px) {
@@ -10,6 +11,6 @@
     }
 
     .spotify-embed-holder iframe {
-        min-height: 30rem;
+        min-height: 20rem;
     }
 }

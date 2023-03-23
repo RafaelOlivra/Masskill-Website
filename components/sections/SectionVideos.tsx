@@ -14,6 +14,10 @@ import styles from '../../styles/sections/SectionVideos.module.css'
 const useVideos = () => {
     const videos: ResponsiveVideoProps[] = [
         {
+            url: 'https://www.youtube.com/embed/MGChi7yekKs',
+            title: 'Masskill- Plastic Sea (Official Music Video)',
+        },
+        {
             url: 'https://www.youtube.com/embed/qQETNtcceuA',
             title: 'Masskill- Blury Visions (Official Music Video)',
         },
