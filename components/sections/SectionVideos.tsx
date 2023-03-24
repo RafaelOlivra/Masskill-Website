@@ -2,8 +2,6 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import ResponsiveVideo, { ResponsiveVideoProps } from '../ResponsiveVideo';
 
-import Carousel from 'nuka-carousel'
-
 import { Audio as Loading } from 'react-loader-spinner'
 
 import bootstrapStyles from '../../styles/Bootstrap.module.css'
@@ -24,10 +22,6 @@ const useVideos = () => {
         {
             url: 'https://www.youtube.com/embed/pgrLiBgF6No',
             title: 'Masskill - Scream In Vain (Official Video) | Single 2018',
-        },
-        {
-            url: 'https://www.youtube.com/embed/vDOBPfhn4wo',
-            title: 'Masskill - Down Society (Official Lyric Video)',
         },
         {
             url: 'https://www.youtube.com/embed/3JjDCL_B0_M',
@@ -119,19 +113,7 @@ const VideosCarousel: React.FC<VideosCarouselProps> = ({ videos, onSlideItemClic
         <div className={styles['videos-carousel']}>
             <div className={styles['holder']}>
                 {videos.length > 0 ? (
-                    <Carousel
-                        slidesToShow={slidesToShow}
-                        defaultControlsConfig={{
-                            nextButtonClassName: styles['carousel-next-button'],
-                            nextButtonStyle: {},
-                            prevButtonClassName: styles['carousel-prev-button'],
-                            prevButtonStyle: {},
-                            pagingDotsContainerClassName: styles['carousel-paging-dots'],
-                            pagingDotsStyle: {
-                                fill: 'white'
-                            }
-                        }}
-                    >
+                    <div className={styles['scrollable-slider']}>
                         {videos.map((ResponsiveVideoProps, index) => {
                             return (
                                 <div key={`unique_${index}`} className={styles['slide-item']}>
@@ -141,7 +123,7 @@ const VideosCarousel: React.FC<VideosCarouselProps> = ({ videos, onSlideItemClic
                                     />
                                 </div>)
                         })}
-                    </Carousel>
+                    </div>
                 ) : (
                     <p>Não há vídeos no momento.</p>
                 )}

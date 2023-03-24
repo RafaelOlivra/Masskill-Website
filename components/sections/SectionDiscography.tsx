@@ -12,6 +12,12 @@ import styles from '../../styles/sections/SectionDiscography.module.css'
 const useAlbums = () => {
     const albums: AlbumProps[] = [
         {
+            coverUrl: '/capa-plastic-sea.jpg',
+            title: 'Plastic Sea Single',
+            date: 2023,
+            spotifyUrl: 'https://open.spotify.com/album/2MZPlUd9xwmvG24i0Uxuvy'
+        },
+        {
             coverUrl: '/capa-the-cycle-ep.jpg',
             title: 'The Cycle EP',
             date: 2020,

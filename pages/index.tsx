@@ -6,6 +6,8 @@ import pageStyles from '../styles/Page.module.css'
 import { readdirSync } from 'fs'
 import path from 'path'
 
+import Image from 'next/image'
+
 import SubHeader from '../components/SubHeader'
 import PageContent from '../components/PageContent';
 import SectionVideos from '../components/sections/SectionVideos'
@@ -32,7 +34,18 @@ const Home: NextPage<Props> = ({ galleryImages }) => {
 
       <PageContent template="fullwidth">
         <SubHeader>
-          <h1 className={pageStyles['page-title']}>Assista agora o novo single <br/> “PLASTIC SEA”</h1>
+          <h1 className={pageStyles['page-title']}>Assista agora o novo single <br />
+            <span className={pageStyles['page-title-image']}>
+              <Image
+                src='/plastic-sea-logo.png'
+                alt='Plastic Sea'
+                layout='responsive'
+                width={1000}
+                height={45}
+                objectFit='cover'
+              />
+            </span>
+            <span style={{ display: 'none' }}>“PLASTIC SEA”</span></h1>
         </SubHeader>
 
         <SectionVideos />
@@ -43,7 +56,7 @@ const Home: NextPage<Props> = ({ galleryImages }) => {
         <SectionContact />
       </PageContent>
 
-    </main>
+    </main >
   )
 }
 

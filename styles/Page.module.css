@@ -9,6 +9,12 @@
   margin-bottom: calc(var(--df-margin-unit) * 2);
 }
 
+.page-title-image {
+  display: block;
+  margin: 2rem auto 0;
+  max-width: 90%;
+}
+
 .template-default,
 .template-fullwidth,
 .page-content {

@@ -125,9 +125,7 @@ const Footer = () => {
   // Animated Backgrounds
   const FeaturedBackgrounds = () => {
     const bgs: any = {
-      "sea-bg.jpg": "Sea Waves",
-      "sea-bg-2.jpg": "Sea Waves",
-      "sea-bg-3.jpg": "Sea Waves",
+      "homepage-plastic-sea-bg.jpg": "Sea Waves"
     };
 
     const bgCount = Object.keys(bgs).length;
