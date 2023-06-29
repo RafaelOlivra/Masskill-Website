@@ -38,14 +38,14 @@ const Home: NextPage<Props> = ({ galleryImages }) => {
             <span className={pageStyles['page-title-image']}>
               <Image
                 src='/where-its-dark-logo.png'
-                alt='Where Its Dark'
+                alt='Where It&apos;s Dark'
                 layout='responsive'
                 width={1000}
                 height={93}
                 objectFit='contain'
               />
             </span>
-            <span style={{ display: 'none' }}>“Where It's Dark”</span></h1>
+            <span style={{ display: 'none' }}>“Where It&apos;s Dark”</span></h1>
         </SubHeader>
 
         <SectionVideos />

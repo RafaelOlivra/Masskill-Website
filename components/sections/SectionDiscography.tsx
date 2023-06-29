@@ -62,7 +62,7 @@ const useSpotifyEmbed = () => {
     const [currentSpotifyEmbedUrl, updateCurrentSpotifyEmbed] = useState<string>('')
     const SpotifyEmbed = () => {
         return (currentSpotifyEmbedUrl)
-            ? <div className={styles['spotify-iframe']}><iframe src={currentSpotifyEmbedUrl} allowfullscreen allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture;"></iframe></div>
+            ? <div className={styles['spotify-iframe']}><iframe src={currentSpotifyEmbedUrl} allowFullScreen></iframe></div>
             : <Loading
                 height="80"
                 width="80"
