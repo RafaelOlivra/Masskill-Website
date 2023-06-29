@@ -37,15 +37,15 @@ const Home: NextPage<Props> = ({ galleryImages }) => {
           <h1 className={pageStyles['page-title']}>Assista agora o novo single <br />
             <span className={pageStyles['page-title-image']}>
               <Image
-                src='/plastic-sea-logo.png'
-                alt='Plastic Sea'
+                src='/where-its-dark-logo.png'
+                alt='Where Its Dark'
                 layout='responsive'
                 width={1000}
-                height={45}
-                objectFit='cover'
+                height={93}
+                objectFit='contain'
               />
             </span>
-            <span style={{ display: 'none' }}>“PLASTIC SEA”</span></h1>
+            <span style={{ display: 'none' }}>“Where It's Dark”</span></h1>
         </SubHeader>
 
         <SectionVideos />

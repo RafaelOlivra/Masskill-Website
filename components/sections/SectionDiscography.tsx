@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import Spotify from 'react-spotify-player'
 import AlbumItem, { AlbumProps } from '../AlbumItem'
 
 import { Audio as Loading } from 'react-loader-spinner'
@@ -11,38 +10,48 @@ import styles from '../../styles/sections/SectionDiscography.module.css'
 
 const useAlbums = () => {
     const albums: AlbumProps[] = [
+        // {
+        //     coverUrl: '/cover-where-its-dark.jpg',
+        //     title: 'Where It\'s Dark',
+        //     date: 2023,
+        //     spotifyUrl: 'https://open.spotify.com/embed/track/6ZKCNmLcR6hH7YRC09RZUo?si=a7593123c3b74235'
+        // },
         {
             coverUrl: '/capa-plastic-sea.jpg',
             title: 'Plastic Sea Single',
             date: 2023,
-            spotifyUrl: 'https://open.spotify.com/album/2MZPlUd9xwmvG24i0Uxuvy'
+            spotifyUrl: 'https://open.spotify.com/embed/track/6ZKCNmLcR6hH7YRC09RZUo?si=a7593123c3b74235'
         },
-        {
-            coverUrl: '/capa-the-cycle-ep.jpg',
-            title: 'The Cycle EP',
-            date: 2020,
-            spotifyUrl: 'https://open.spotify.com/album/2rncJ3kK5FTTnjRlqdrgkp?si=7GVNieDBQq2qEi2-VIcJRA&dl_branch=1&nd=1'
-        },
-        {
-            coverUrl: '/capa-the-cycle-single.jpg',
-            title: 'Down Society Single',
-            date: 2020,
-            spotifyUrl: 'https://open.spotify.com/album/30dMGalxc741B0k5lDZ14S?si=D2p-Pw5NRaKYLXCvKPIOig&dl_branch=1&nd=1'
+        // {
+        //     coverUrl: '/capa-the-cycle-ep.jpg',
+        //     title: 'The Cycle EP',
+        //     date: 2020,
+        //     spotifyUrl: 'https://open.spotify.com/album/2rncJ3kK5FTTnjRlqdrgkp?si=7GVNieDBQq2qEi2-VIcJRA&dl_branch=1&nd=1'
+        // },
+        // {
+        //     coverUrl: '/capa-the-cycle-single.jpg',
+        //     title: 'Down Society Single',
+        //     date: 2020,
+        //     spotifyUrl: 'https://open.spotify.com/album/30dMGalxc741B0k5lDZ14S?si=D2p-Pw5NRaKYLXCvKPIOig&dl_branch=1&nd=1'
 
-        },
+        // },
         {
             coverUrl: '/capa-blurry-visions-single.jpg',
             title: 'Blury Visions Single',
             date: 2020,
-            spotifyUrl: 'https://open.spotify.com/album/1AeqOPA5uSBpRNy6JmWgn7?si=vIW69LXIQ4iu-HlaaDs0bg&dl_branch=1&nd=1'
-
+            spotifyUrl: 'https://open.spotify.com/embed/track/2rO1n6StnPfxVRwqPkPz4Y?si=d3d5e38249ac41fd'
+        },
+        {
+            coverUrl: '/capa-into-darkness.jpg',
+            title: 'Into Darkness',
+            date: 2020,
+            spotifyUrl: 'https://open.spotify.com/embed/track/5nV2rgq1tBIu8j6xOrM2Ct?utm_source=oembed'
         },
         {
             coverUrl: '/capa-scream-in-vain.jpg',
             title: 'Scream in Vain Single',
             date: 2018,
-            spotifyUrl: 'https://open.spotify.com/album/6XCNQca8DDGJGoHYdLvfja?si=iF2aehexTN66xtKHepJRZw&dl_branch=1&nd=1'
-
+            spotifyUrl: 'https://open.spotify.com/embed/track/1FzIS9EMWlOqZ32lNZhY0I?utm_source=oembed'
         }
     ]
 
@@ -53,7 +62,7 @@ const useSpotifyEmbed = () => {
     const [currentSpotifyEmbedUrl, updateCurrentSpotifyEmbed] = useState<string>('')
     const SpotifyEmbed = () => {
         return (currentSpotifyEmbedUrl)
-            ? <Spotify uri={currentSpotifyEmbedUrl} size="large" view="coverart" />
+            ? <div className={styles['spotify-iframe']}><iframe src={currentSpotifyEmbedUrl} allowfullscreen allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture;"></iframe></div>
             : <Loading
                 height="80"
                 width="80"
