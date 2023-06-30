@@ -10,12 +10,12 @@ import styles from '../../styles/sections/SectionDiscography.module.css'
 
 const useAlbums = () => {
     const albums: AlbumProps[] = [
-        // {
-        //     coverUrl: '/cover-where-its-dark.jpg',
-        //     title: 'Where It\'s Dark',
-        //     date: 2023,
-        //     spotifyUrl: 'https://open.spotify.com/embed/track/6ZKCNmLcR6hH7YRC09RZUo?si=a7593123c3b74235'
-        // },
+        {
+            coverUrl: '/cover-where-its-dark.jpg',
+            title: 'Where It\'s Dark',
+            date: 2023,
+            spotifyUrl: 'https://open.spotify.com/embed/track/0QYp9szXCTGUIqMl2RCsJw?utm_source=generator'
+        },
         {
             coverUrl: '/capa-plastic-sea.jpg',
             title: 'Plastic Sea Single',
