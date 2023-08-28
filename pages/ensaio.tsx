@@ -9,6 +9,8 @@ import PageContent from '../components/PageContent'
 import bootstrapStyles from '../styles/Bootstrap.module.css'
 import pageStyles from '../styles/Page.module.css'
 import utilsStyles from '../styles/Utils.module.css'
+import { useState } from 'react'
+import Button from '../components/Button'
 
 interface Track {
   url: string,
@@ -106,15 +108,50 @@ const useTracks = () => {
       title: "CLICK + VS : The Beginning of All Life (Estilingue) - C Tuning",
       display: true,
       type: 'click-track'
+    },
+    {
+      url: assetsUrl + "/clicks/someone-i-cant-be-click-vs.mp3",
+      title: "CLICK + VS : Simone - C Tuning",
+      display: true,
+      type: 'click-track'
     }
   ]
 
-  return { tracks : [...playTracks, ...clickTracks] }
+  return { tracks: [...playTracks, ...clickTracks] }
+}
+
+const useSimpleLockOut = () => {
+  const passwordHash = "LTEwODEyNzAyMTk="
+  const [isLocked, setLocked] = useState(false);
+
+  const hashCode = (str: string) => {
+    let hash = 0;
+    for (let i = 0, len = str.length; i < len; i++) {
+      let chr = str.charCodeAt(i);
+      hash = (hash << 5) - hash + chr;
+      hash |= 0;
+    }
+    return window.btoa(hash.toString());
+  }
+
+  const handleLockOut = () => {
+    let inputPassword = prompt('Informe a senha de acesso!')
+    inputPassword = inputPassword ? hashCode(inputPassword) : '';
+
+    if (inputPassword === passwordHash) {
+      setLocked(true)
+    } else {
+      alert('Senha incorreta!')
+    }
+  }
+
+  return { isLocked, handleLockOut }
 }
 
 const Page: NextPage = () => {
 
   const { tracks } = useTracks()
+  const { isLocked, handleLockOut } = useSimpleLockOut()
 
   return (
     <main className={pageStyles['page-holder']}>
@@ -132,53 +169,33 @@ const Page: NextPage = () => {
         </SubHeader>
         <div className="track-list-holder">
           <div className={bootstrapStyles['row'] + ' ' + utilsStyles['align-items-center']}>
-            <h2 className={utilsStyles['text-center'] + ' ' + utilsStyles['d-block']}>Músicas</h2>
-            {
-              tracks.map((track, index) => {
-                if (track.display && track.type == 'play-track')
-                  return (
-                    <div key={index} className={bootstrapStyles['col-lg-12']}>
-                      <div className={bootstrapStyles['row']}>
-                        <div className={bootstrapStyles['col-lg-6'] + ' ' + utilsStyles['text-center-mb']}>
-                          <h3 className='h3'>{track.title}</h3>
+            {!isLocked && <div className={bootstrapStyles['col-lg-12'] + ' ' + utilsStyles['text-center']}><Button onClick={handleLockOut}>Acessar</Button></div>}
+            {isLocked &&
+              <>
+                <h2 className={utilsStyles['text-center'] + ' ' + utilsStyles['d-block']}>Click Tracks</h2>
+                {
+                  tracks.map((track, index) => {
+                    if (track.display && track.type == 'click-track')
+                      return (
+                        <div key={index} className={bootstrapStyles['col-lg-12']}>
+                          <div className={bootstrapStyles['row']}>
+                            <div className={bootstrapStyles['col-lg-6'] + ' ' + utilsStyles['text-center-mb']}>
+                              <h3 className='h3'>{track.title}</h3>
+                            </div>
+                            <div className={bootstrapStyles['col-lg-6'] + ' ' + utilsStyles['text-center']}>
+                              <ReactAudioPlayer
+                                src={track.url}
+                                className={utilsStyles['fullwidth']}
+                                autoPlay={false}
+                                controls
+                              />
+                            </div>
+                          </div>
                         </div>
-                        <div className={bootstrapStyles['col-lg-6'] + ' ' + utilsStyles['text-center']}>
-                          <ReactAudioPlayer
-                            src={track.url}
-                            className={utilsStyles['fullwidth']}
-                            autoPlay={false}
-                            controls
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  )
-              })
-            }
-            <div className={utilsStyles['spacer'] + ' ' + utilsStyles['double']}></div>
-            <h2 className={utilsStyles['text-center'] + ' ' + utilsStyles['d-block']}>Click Tracks</h2>
-            {
-              tracks.map((track, index) => {
-                if (track.display && track.type == 'click-track')
-                  return (
-                    <div key={index} className={bootstrapStyles['col-lg-12']}>
-                      <div className={bootstrapStyles['row']}>
-                        <div className={bootstrapStyles['col-lg-6'] + ' ' + utilsStyles['text-center-mb']}>
-                          <h3 className='h3'>{track.title}</h3>
-                        </div>
-                        <div className={bootstrapStyles['col-lg-6'] + ' ' + utilsStyles['text-center']}>
-                          <ReactAudioPlayer
-                            src={track.url}
-                            className={utilsStyles['fullwidth']}
-                            autoPlay={false}
-                            controls
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  )
-              })
-            }
+                      )
+                  })
+                }
+              </>}
           </div>
         </div>
 
