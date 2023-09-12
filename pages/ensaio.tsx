@@ -76,7 +76,7 @@ const useTracks = () => {
     {
       url: assetsUrl + "/clicks/blurry-visions-click-vs.mp3",
       title: "CLICK + VS : Blurry Visions - C Tuning",
-      display: false,
+      display: true,
       type: 'click-track'
     },
     {
