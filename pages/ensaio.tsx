@@ -3,121 +3,257 @@ import Head from 'next/head'
 
 import ReactAudioPlayer from 'react-audio-player'
 
+import { AudioPlayerControlSprite, AudioPlayer, TrackType } from 'react-audio-player-pro';
+import 'react-audio-player-pro/dist/style.css';
+
 import SubHeader from '../components/SubHeader'
 import PageContent from '../components/PageContent'
 
 import bootstrapStyles from '../styles/Bootstrap.module.css'
 import pageStyles from '../styles/Page.module.css'
 import utilsStyles from '../styles/Utils.module.css'
+import audioPlayerCustomStyles from '../styles/components/AudioPlayerCustom.module.css'
 import { useState } from 'react'
 import Button from '../components/Button'
 
 interface Track {
-  url: string,
-  title: string,
+  src: string,
+  name: string,
+  img?: string,
   display: boolean,
-  type: 'click-track' | 'play-track',
+  id: number,
+  type: 'click-track' | 'play-track' | 'show-track',
 }
 
 const useTracks = () => {
   const assetsUrl = 'https://static.masskill.com.br/assets'
   const playTracks: Track[] = [
     {
-      url: assetsUrl + "/tracks/Blurry Visions-C Tuning.mp3",
-      title: "Blurry Visions - C Tuning",
+      src: assetsUrl + "/tracks/Blurry Visions-C Tuning.mp3",
+      name: "Blurry Visions - C Tuning",
       display: false,
-      type: 'play-track'
+      type: 'play-track',
+      id: 1,
     },
     {
-      url: assetsUrl + "/tracks/Coronga Virus Demo-C Tuning.mp3",
-      title: "Coronga Virus Demo - C Tuning",
+      src: assetsUrl + "/tracks/Coronga Virus Demo-C Tuning.mp3",
+      name: "Coronga Virus Demo - C Tuning",
       display: true,
-      type: 'play-track'
+      type: 'play-track',
+      id: 2,
     },
     {
-      url: assetsUrl + "/tracks/plastic-sea-masskill-demo-(Arquitetura) - C Tuning.mp3",
-      title: "plastic-sea-masskill-demo-(Arquitetura) - C Tuning",
+      src: assetsUrl + "/tracks/plastic-sea-masskill-demo-(Arquitetura) - C Tuning.mp3",
+      name: "plastic-sea-masskill-demo-(Arquitetura) - C Tuning",
       display: true,
-      type: 'play-track'
+      type: 'play-track',
+      id: 3,
     },
     {
-      url: assetsUrl + "/tracks/Down Society-C Tuning.mp3",
-      title: "Down Society - C Tuning",
+      src: assetsUrl + "/tracks/Down Society-C Tuning.mp3",
+      name: "Down Society - C Tuning",
       display: false,
-      type: 'play-track'
+      type: 'play-track',
+      id: 4,
     },
     {
-      url: assetsUrl + "/tracks/jangada-audio-file-C-Tuning.mp3",
-      title: "Jangada - C Tuning",
+      src: assetsUrl + "/tracks/jangada-audio-file-C-Tuning.mp3",
+      name: "Jangada - C Tuning",
       display: true,
-      type: 'play-track'
+      type: 'play-track',
+      id: 5,
     },
     {
-      url: assetsUrl + "/tracks/sinusite-audio-C-Tuning.mp3",
-      title: "Sinusite - C Tuning",
+      src: assetsUrl + "/tracks/sinusite-audio-C-Tuning.mp3",
+      name: "Sinusite - C Tuning",
       display: true,
-      type: 'play-track'
+      type: 'play-track',
+      id: 6,
     },
     {
-      url: assetsUrl + "/tracks/the-beginning-of-all-life-C-Tuning.mp3",
-      title: "The Beginning of All Life (Estilingue) - C Tuning",
+      src: assetsUrl + "/tracks/the-beginning-of-all-life-C-Tuning.mp3",
+      name: "The Beginning of All Life (Estilingue) - C Tuning",
       display: true,
-      type: 'play-track'
+      type: 'play-track',
+      id: 7,
     },
     {
-      url: assetsUrl + "/tracks/Scream In Vain-C Tuning.mp3",
-      title: "Scream In Vain - C Tuning",
+      src: assetsUrl + "/tracks/Scream In Vain-C Tuning.mp3",
+      name: "Scream In Vain - C Tuning",
       display: false,
-      type: 'play-track'
+      type: 'play-track',
+      id: 8,
     }
   ]
 
   const clickTracks: Track[] = [
     {
-      url: assetsUrl + "/clicks/blurry-visions-click-vs.mp3",
-      title: "CLICK + VS : Blurry Visions - C Tuning",
+      src: assetsUrl + "/clicks/blurry-visions-click-vs.mp3",
+      name: "CLICK + VS : Blurry Visions - C Tuning",
       display: true,
-      type: 'click-track'
+      type: 'click-track',
+      id: 30,
     },
     {
-      url: assetsUrl + "/clicks/coronga-virus-click-vs.mp3",
-      title: "CLICK + VS : Coronga Virus - C Tuning",
+      src: assetsUrl + "/clicks/coronga-virus-click-vs.mp3",
+      name: "CLICK + VS : Coronga Virus - C Tuning",
       display: true,
-      type: 'click-track'
+      type: 'click-track',
+      id: 31,
     },
     {
-      url: assetsUrl + "/clicks/jangada-click-vs.mp3",
-      title: "CLICK + VS : Jangada - C Tuning",
+      src: assetsUrl + "/clicks/jangada-click-vs.mp3",
+      name: "CLICK + VS : Jangada - C Tuning",
       display: true,
-      type: 'click-track'
+      type: 'click-track',
+      id: 32,
     },
     {
-      url: assetsUrl + "/clicks/plastic-sea-click-vs.mp3",
-      title: "CLICK + VS : Plastic Sea (Arquitetura) - C Tuning",
+      src: assetsUrl + "/clicks/plastic-sea-click-vs.mp3",
+      name: "CLICK + VS : Plastic Sea (Arquitetura) - C Tuning",
       display: true,
-      type: 'click-track'
+      type: 'click-track',
+      id: 33,
     },
     {
-      url: assetsUrl + "/clicks/sinusite-click-vs.mp3",
-      title: "CLICK + VS : Sinusite - C Tuning",
+      src: assetsUrl + "/clicks/sinusite-click-vs.mp3",
+      name: "CLICK + VS : Sinusite - C Tuning",
       display: true,
-      type: 'click-track'
+      type: 'click-track',
+      id: 34,
     },
     {
-      url: assetsUrl + "/clicks/the-beginning-of-all-life-(estilingue)-click-vs.mp3",
-      title: "CLICK + VS : The Beginning of All Life (Estilingue) - C Tuning",
+      src: assetsUrl + "/clicks/the-beginning-of-all-life-(estilingue)-click-vs.mp3",
+      name: "CLICK + VS : The Beginning of All Life (Estilingue) - C Tuning",
       display: true,
-      type: 'click-track'
+      type: 'click-track',
+      id: 35,
     },
     {
-      url: assetsUrl + "/clicks/someone-i-cant-be-click-vs.mp3",
-      title: "CLICK + VS : Simone - C Tuning",
+      src: assetsUrl + "/clicks/someone-i-cant-be-click-vs.mp3",
+      name: "CLICK + VS : Simone - C Tuning",
       display: true,
-      type: 'click-track'
+      type: 'click-track',
+      id: 36,
     }
   ]
 
-  return { tracks: [...playTracks, ...clickTracks] }
+  const showTracks: Track[] = [
+    {
+      src: assetsUrl + "/clicks/CHAMADA-PROX-plastic-sea-click-vs.mp3",
+      name: "↓ ---- CHAMADA PROX - Plastic Sea",
+      display: true,
+      type: 'show-track',
+      id: 85,
+    },
+    {
+      src: assetsUrl + "/clicks/plastic-sea-click-vs.mp3",
+      name: "🎵 Plastic Sea - C Tuning",
+      display: true,
+      type: 'show-track',
+      id: 63,
+    },
+    {
+      src: assetsUrl + "/clicks/CHAMADA-PROX-the-beggining-of-all-life-click-vs.mp3",
+      name: "↓ ---- CHAMADA PROX - The Beginning of All Life",
+      display: true,
+      type: 'show-track',
+      id: 81,
+    },
+    {
+      src: assetsUrl + "/clicks/the-beginning-of-all-life-(estilingue)-click-vs.mp3",
+      name: "🎵 The Beginning of All Life (Estilingue) - C Tuning",
+      display: true,
+      type: 'show-track',
+      id: 65,
+    },
+    {
+      src: assetsUrl + "/clicks/PAUSA-30s-click-vs.mp3",
+      name: "↓ ---- PAUSA - 30s",
+      display: true,
+      type: 'show-track',
+      id: 80,
+    },
+    {
+      src: assetsUrl + "/clicks/CHAMADA-PROX-jangada-where-its-dark-click-vs.mp3",
+      name: "↓ ---- CHAMADA PROX - Where It's Dark",
+      display: true,
+      type: 'show-track',
+      id: 82,
+    },
+    {
+      src: assetsUrl + "/clicks/jangada-click-vs.mp3",
+      name: "🎵 Where It's Dark (Jangada) - C Tuning",
+      display: true,
+      type: 'show-track',
+      id: 62,
+    },
+    {
+      src: assetsUrl + "/clicks/PAUSA-30s-click-vs.mp3",
+      name: "↓ ---- PAUSA - 30s",
+      display: true,
+      type: 'show-track',
+      id: 80,
+    },
+    {
+      src: assetsUrl + "/clicks/CHAMADA-PROX-sinusite-escape-samsara-click-vs.mp3",
+      name: "↓ ---- CHAMADA PROX - Escape Samsara",
+      display: true,
+      type: 'show-track',
+      id: 83,
+    },
+    {
+      src: assetsUrl + "/clicks/sinusite-click-vs.mp3",
+      name: "🎵 Escape Samsara (Sinusite) - C Tuning",
+      display: true,
+      type: 'show-track',
+      id: 64,
+    },
+    {
+      src: assetsUrl + "/clicks/PAUSA-30s-click-vs.mp3",
+      name: "↓ ---- PAUSA - 30s",
+      display: true,
+      type: 'show-track',
+      id: 80,
+    },
+    {
+      src: assetsUrl + "/clicks/CHAMADA-PROX-blury-visions-click-vs.mp3",
+      name: "↓ ---- CHAMADA PROX - Blurry Visions",
+      display: true,
+      type: 'show-track',
+      id: 84,
+    },
+    {
+      src: assetsUrl + "/clicks/blurry-visions-click-vs.mp3",
+      name: "🎵 Blurry Visions - C Tuning",
+      display: true,
+      type: 'show-track',
+      id: 60,
+    },
+    {
+      src: assetsUrl + "/clicks/PAUSA-2-minutos-click-vs.mp3",
+      name: "↓ ---- PAUSA - 2 Minutos",
+      display: true,
+      type: 'show-track',
+      id: 81,
+    },
+    {
+      src: assetsUrl + "/clicks/CHAMADA-PROX-simone-someone-i-cant-be-click-vs.mp3",
+      name: "↓ ---- CHAMADA PROX - Someone I Can't Be (Ending)",
+      display: true,
+      type: 'show-track',
+      id: 86,
+    },
+    {
+      src: assetsUrl + "/clicks/someone-i-cant-be-ENDING-click-vs.mp3",
+      name: "🎵 Someone I Can't Be (Ending) - C Tuning",
+      display: true,
+      type: 'show-track',
+      id: 66,
+    }
+  ]
+
+  return { tracks: [...playTracks, ...clickTracks, ...showTracks] }
 }
 
 const useSimpleLockOut = () => {
@@ -153,6 +289,24 @@ const Page: NextPage = () => {
   const { tracks } = useTracks()
   const { isLocked, handleLockOut } = useSimpleLockOut()
 
+  // Adapt showTracks to TrackType for use with react-audio-player-pro
+  const { tracks: showTracks } = useTracks();
+  let audioTrackList: TrackType[] = [];
+
+  showTracks.map((track, index) => {
+    if (track.type === 'show-track') {
+      audioTrackList.push({
+        src: track.src,
+        preload: 'metadata',
+        mediaMetadata: {
+          title: track.name,
+          artist: 'Masskill',
+          album: 'ShowTracks'
+        }
+      });
+    }
+  });
+
   return (
     <main className={pageStyles['page-holder']}>
       <Head>
@@ -172,29 +326,36 @@ const Page: NextPage = () => {
             {!isLocked && <div className={bootstrapStyles['col-lg-12'] + ' ' + utilsStyles['text-center']}><Button onClick={handleLockOut}>Acessar</Button></div>}
             {isLocked &&
               <>
-                <h2 className={utilsStyles['text-center'] + ' ' + utilsStyles['d-block']}>Click Tracks</h2>
-                {
-                  tracks.map((track, index) => {
-                    if (track.display && track.type == 'click-track')
-                      return (
-                        <div key={index} className={bootstrapStyles['col-lg-12']}>
-                          <div className={bootstrapStyles['row']}>
-                            <div className={bootstrapStyles['col-lg-6'] + ' ' + utilsStyles['text-center-mb']}>
-                              <h3 className='h3'>{track.title}</h3>
-                            </div>
-                            <div className={bootstrapStyles['col-lg-6'] + ' ' + utilsStyles['text-center']}>
-                              <ReactAudioPlayer
-                                src={track.url}
-                                className={utilsStyles['fullwidth']}
-                                autoPlay={false}
-                                controls
-                              />
+                <div className={bootstrapStyles['col-lg-12']}>
+                  <h2 className={utilsStyles['text-center'] + ' ' + utilsStyles['d-block']}>Show (35 Min)</h2>
+                  <div className={audioPlayerCustomStyles['audio-player-custom']}>
+                    <AudioPlayerControlSprite />
+                    <AudioPlayer trackList={audioTrackList} />
+                  </div>
+                  <h2 className={utilsStyles['text-center'] + ' ' + utilsStyles['d-block']}>Click Tracks</h2>
+                  {
+                    tracks.map((track, index) => {
+                      if (track.display && track.type == 'click-track')
+                        return (
+                          <div key={index} className={bootstrapStyles['col-lg-12']}>
+                            <div className={bootstrapStyles['row']}>
+                              <div className={bootstrapStyles['col-lg-6'] + ' ' + utilsStyles['text-center-mb']}>
+                                <h3 className='h3'>{track.name}</h3>
+                              </div>
+                              <div className={bootstrapStyles['col-lg-6'] + ' ' + utilsStyles['text-center']}>
+                                <ReactAudioPlayer
+                                  src={track.src}
+                                  className={utilsStyles['fullwidth']}
+                                  autoPlay={false}
+                                  controls
+                                />
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      )
-                  })
-                }
+                        )
+                    })
+                  }
+                </div>
               </>}
           </div>
         </div>
