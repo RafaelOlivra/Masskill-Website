@@ -25,7 +25,7 @@
     border-color: #000;
 }
 
-.audio-player-custom button[aria-label="play"] {
+.audio-player-custom li button[aria-label="play"] {
     width: 100%;
     position: absolute;
     left: 1.5rem;
