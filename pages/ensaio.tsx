@@ -224,8 +224,8 @@ const useTracks = () => {
       id: 84,
     },
     {
-      src: assetsUrl + "/clicks/blurry-visions-click-vs.mp3",
-      name: "🎵 Blurry Visions - C Tuning",
+      src: assetsUrl + "/clicks/blurry-visions-slower-click-vs.mp3",
+      name: "🎵 Blurry Visions - Slower - C Tuning",
       display: true,
       type: 'show-track',
       id: 60,
