@@ -34,7 +34,7 @@ const Home: NextPage<Props> = ({ galleryImages }) => {
 
       <PageContent template="fullwidth">
         <SubHeader>
-          <h1 className={pageStyles['page-title']}>Lançamento do novo single <br />
+          <h1 className={pageStyles['page-title']}>Lançamento do novo clipe <br />
             <span className={pageStyles['page-title-image']}>
               <Image
                 src='/someone-i-cant-be-logo.png'
