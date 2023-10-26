@@ -34,18 +34,19 @@ const Home: NextPage<Props> = ({ galleryImages }) => {
 
       <PageContent template="fullwidth">
         <SubHeader>
-          <h1 className={pageStyles['page-title']}>Assista agora o novo single <br />
+          <h1 className={pageStyles['page-title']}>Lançamento do novo single <br />
             <span className={pageStyles['page-title-image']}>
               <Image
-                src='/where-its-dark-logo.png'
-                alt='Where It&apos;s Dark'
+                src='/someone-i-cant-be-logo.png'
+                alt='Someone I Can&apos;t Be'
                 layout='responsive'
-                width={1000}
-                height={93}
+                width={1100}
+                height={102}
                 objectFit='contain'
               />
             </span>
-            <span style={{ display: 'none' }}>“Where It&apos;s Dark”</span></h1>
+            <span style={{ display: 'none' }}>“Someone I Can&apos;t Be”</span> <br />
+            <span className={pageStyles['inner-subtitle']}>27 Outubro às 12h</span></h1>
         </SubHeader>
 
         <SectionVideos />
