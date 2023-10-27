@@ -12,9 +12,9 @@ const useAlbums = () => {
     const albums: AlbumProps[] = [
         {
             coverUrl: '/capa-someone-i-cant-be.jpg',
-            title: 'Someone I Can\'t Be (Soon)',
+            title: 'Someone I Can\'t Be',
             date: 2023,
-            spotifyUrl: 'https://open.spotify.com/embed/track/0QYp9szXCTGUIqMl2RCsJw?utm_source=generator'
+            spotifyUrl: 'https://open.spotify.com/embed/track/2Jg1SwtfuNj4qUclk4r2xs?utm_source=generator'
         },
         {
             coverUrl: '/cover-where-its-dark.jpg',
