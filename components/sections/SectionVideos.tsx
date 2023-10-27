@@ -12,6 +12,10 @@ import styles from '../../styles/sections/SectionVideos.module.css'
 const useVideos = () => {
     const videos: ResponsiveVideoProps[] = [
         {
+            url: 'https://www.youtube.com/embed/sD6ErOhZybc?si=wsz55IGTKvoXdO2D',
+            title: 'Masskill- Someone I Can\'t Be (Official Music Video)',
+        },
+        {
             url: 'https://www.youtube.com/embed/12P6hNuB83U',
             title: 'Masskill- Where It\'s Dark (Official Music Video)',
         },
@@ -23,10 +27,10 @@ const useVideos = () => {
             url: 'https://www.youtube.com/embed/qQETNtcceuA',
             title: 'Masskill- Blury Visions (Official Music Video)',
         },
-        {
-            url: 'https://www.youtube.com/embed/pgrLiBgF6No',
-            title: 'Masskill - Scream In Vain (Official Video) | Single 2018',
-        },
+        // {
+        //     url: 'https://www.youtube.com/embed/pgrLiBgF6No',
+        //     title: 'Masskill - Scream In Vain (Official Video) | Single 2018',
+        // },
         // {
         //     url: 'https://www.youtube.com/embed/3JjDCL_B0_M',
         //     title: 'Masskill - The Cycle EP Solos (Guitar Playthrough)',

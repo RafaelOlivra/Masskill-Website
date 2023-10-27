@@ -34,7 +34,7 @@ const Home: NextPage<Props> = ({ galleryImages }) => {
 
       <PageContent template="fullwidth">
         <SubHeader>
-          <h1 className={pageStyles['page-title']}>Lançamento do novo clipe <br />
+          <h1 className={pageStyles['page-title']}>Confira o novo single <br />
             <span className={pageStyles['page-title-image']}>
               <Image
                 src='/someone-i-cant-be-logo.png'
@@ -45,8 +45,7 @@ const Home: NextPage<Props> = ({ galleryImages }) => {
                 objectFit='contain'
               />
             </span>
-            <span style={{ display: 'none' }}>“Someone I Can&apos;t Be”</span> <br />
-            <span className={pageStyles['inner-subtitle']}>27 Outubro às 12h</span></h1>
+            <span style={{ display: 'none' }}>“Someone I Can&apos;t Be”</span></h1>
         </SubHeader>
 
         <SectionVideos />
