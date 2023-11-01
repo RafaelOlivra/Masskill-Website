@@ -140,8 +140,8 @@ const useTracks = () => {
 
   const showTracks: Track[] = [
     {
-      src: assetsUrl + "/clicks/CHAMADA-PROX-plastic-sea-click-vs.mp3",
-      name: "↓ ---- CHAMADA PROX - Plastic Sea",
+      src: assetsUrl + "/clicks/CHAMADA-PROX-SHORT-plastic-sea-click-vs.mp3",
+      name: "↓ ---- CHAMADA PROX SHORT - Plastic Sea",
       display: true,
       type: 'show-track',
       id: 85,
@@ -154,29 +154,8 @@ const useTracks = () => {
       id: 63,
     },
     {
-      src: assetsUrl + "/clicks/CHAMADA-PROX-the-beggining-of-all-life-click-vs.mp3",
-      name: "↓ ---- CHAMADA PROX - The Beginning of All Life",
-      display: true,
-      type: 'show-track',
-      id: 81,
-    },
-    {
-      src: assetsUrl + "/clicks/the-beginning-of-all-life-(estilingue)-click-vs.mp3",
-      name: "🎵 The Beginning of All Life (Estilingue) - C Tuning",
-      display: true,
-      type: 'show-track',
-      id: 65,
-    },
-    {
-      src: assetsUrl + "/clicks/PAUSA-30s-click-vs.mp3",
-      name: "↓ ---- PAUSA - 30s",
-      display: true,
-      type: 'show-track',
-      id: 80,
-    },
-    {
-      src: assetsUrl + "/clicks/CHAMADA-PROX-jangada-where-its-dark-click-vs.mp3",
-      name: "↓ ---- CHAMADA PROX - Where It's Dark",
+      src: assetsUrl + "/clicks/CHAMADA-PROX-SHORT-jangada-where-its-dark-click-vs.mp3",
+      name: "↓ ---- CHAMADA PROX SHORT - Where It's Dark",
       display: true,
       type: 'show-track',
       id: 82,
@@ -187,6 +166,20 @@ const useTracks = () => {
       display: true,
       type: 'show-track',
       id: 62,
+    },
+    {
+      src: assetsUrl + "/clicks/CHAMADA-PROX-SHORT-the-beggining-of-all-life-click-vs.mp3",
+      name: "↓ ---- CHAMADA PROX SHORT - The Beginning of All Life",
+      display: true,
+      type: 'show-track',
+      id: 81,
+    },
+    {
+      src: assetsUrl + "/clicks/the-beginning-of-all-life-(estilingue)-click-vs.mp3",
+      name: "🎵 The Beginning of All Life (Estilingue) - C Tuning",
+      display: true,
+      type: 'show-track',
+      id: 65,
     },
     {
       src: assetsUrl + "/clicks/PAUSA-30s-click-vs.mp3",
@@ -231,12 +224,19 @@ const useTracks = () => {
       id: 60,
     },
     {
-      src: assetsUrl + "/clicks/PAUSA-2-minutos-click-vs.mp3",
-      name: "↓ ---- PAUSA - 2 Minutos",
+      src: assetsUrl + "/clicks/PAUSA-30s-click-vs.mp3",
+      name: "↓ ---- PAUSA - 30s",
       display: true,
       type: 'show-track',
-      id: 81,
+      id: 80,
     },
+    // {
+    //   src: assetsUrl + "/clicks/PAUSA-2-minutos-click-vs.mp3",
+    //   name: "↓ ---- PAUSA - 2 Minutos",
+    //   display: true,
+    //   type: 'show-track',
+    //   id: 81,
+    // },
     {
       src: assetsUrl + "/clicks/CHAMADA-PROX-simone-someone-i-cant-be-click-vs.mp3",
       name: "↓ ---- CHAMADA PROX - Someone I Can't Be (Ending)",
@@ -327,7 +327,7 @@ const Page: NextPage = () => {
             {isLocked &&
               <>
                 <div className={bootstrapStyles['col-lg-12']}>
-                  <h2 className={utilsStyles['text-center'] + ' ' + utilsStyles['d-block']}>Show (35 Min)</h2>
+                  <h2 className={utilsStyles['text-center'] + ' ' + utilsStyles['d-block']}>Show (30 Min)</h2>
                   <div className={audioPlayerCustomStyles['audio-player-custom']}>
                     <AudioPlayerControlSprite />
                     <AudioPlayer trackList={audioTrackList} />
@@ -337,7 +337,7 @@ const Page: NextPage = () => {
                     tracks.map((track, index) => {
                       if (track.display && track.type == 'click-track')
                         return (
-                          <div key={index} className={bootstrapStyles['col-lg-12']}>
+                          <div key={index + track.name} className={bootstrapStyles['col-lg-12']}>
                             <div className={bootstrapStyles['row']}>
                               <div className={bootstrapStyles['col-lg-6'] + ' ' + utilsStyles['text-center-mb']}>
                                 <h3 className='h3'>{track.name}</h3>
