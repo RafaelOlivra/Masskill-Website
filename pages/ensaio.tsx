@@ -140,11 +140,11 @@ const useTracks = () => {
 
   const showTracks: Track[] = [
     {
-      src: assetsUrl + "/clicks/CHAMADA-PROX-SHORT-plastic-sea-click-vs.mp3",
-      name: "↓ ---- CHAMADA PROX SHORT - Plastic Sea",
+      src: assetsUrl + "/clicks/intro-show-2023.mp3",
+      name: "↓ ---- INTRO SHOW 2023",
       display: true,
       type: 'show-track',
-      id: 85,
+      id: 90,
     },
     {
       src: assetsUrl + "/clicks/plastic-sea-click-vs.mp3",
