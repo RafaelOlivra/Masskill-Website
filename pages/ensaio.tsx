@@ -139,20 +139,27 @@ const useTracks = () => {
   ]
 
   const showTracks: Track[] = [
+    // {
+    //   src: assetsUrl + "/clicks/intro-show-2023.mp3",
+    //   name: "↓ ---- INTRO SHOW 2023",
+    //   display: true,
+    //   type: 'show-track',
+    //   id: 90,
+    // },
     {
-      src: assetsUrl + "/clicks/intro-show-2023.mp3",
-      name: "↓ ---- INTRO SHOW 2023",
+      src: assetsUrl + "/clicks/intro-show-oceanus-plastic-sea.mp3",
+      name: "↓ ---- INTRO SHOW 2023 + PLASTIC SEA",
       display: true,
       type: 'show-track',
-      id: 90,
+      id: 91,
     },
-    {
-      src: assetsUrl + "/clicks/plastic-sea-click-vs.mp3",
-      name: "🎵 Plastic Sea - C Tuning",
-      display: true,
-      type: 'show-track',
-      id: 63,
-    },
+    // {
+    //   src: assetsUrl + "/clicks/plastic-sea-click-vs.mp3",
+    //   name: "🎵 Plastic Sea - C Tuning",
+    //   display: true,
+    //   type: 'show-track',
+    //   id: 63,
+    // },
     {
       src: assetsUrl + "/clicks/CHAMADA-PROX-SHORT-jangada-where-its-dark-click-vs.mp3",
       name: "↓ ---- CHAMADA PROX SHORT - Where It's Dark",
