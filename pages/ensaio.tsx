@@ -148,7 +148,7 @@ const useTracks = () => {
     // },
     {
       src: assetsUrl + "/clicks/intro-show-oceanus-plastic-sea.mp3",
-      name: "↓ ---- INTRO SHOW 2023 + PLASTIC SEA",
+      name: "🎵 INTRO SHOW 2023 + PLASTIC SEA",
       display: true,
       type: 'show-track',
       id: 91,
