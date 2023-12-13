@@ -210,6 +210,20 @@ const useTracks = () => {
       id: 64,
     },
     {
+      src: assetsUrl + "/clicks/CHAMADA-PROX-SHORT-vem-hexa.mp3",
+      name: "↓ ---- CHAMADA PROX SHORT - Vem Hexa",
+      display: true,
+      type: 'show-track',
+      id: 88,
+    },
+    {
+      src: assetsUrl + "/clicks/vem-hexa-click-vs.mp3",
+      name: "🎵 Vem Hexa - C Tuning",
+      display: true,
+      type: 'show-track',
+      id: 89,
+    },
+    {
       src: assetsUrl + "/clicks/PAUSA-30s-click-vs.mp3",
       name: "↓ ---- PAUSA - 30s",
       display: true,
