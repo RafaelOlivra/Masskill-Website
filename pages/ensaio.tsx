@@ -252,18 +252,18 @@ const useTracks = () => {
       id: 37,
     },
     {
-      src: assetsUrl + "/clicks/CHAMADA-PROX-blury-visions-click-vs.mp3",
-      name: "↓ ---- CHAMADA PROX - Blurry Visions",
-      display: true,
-      type: 'show-track',
-      id: 84,
-    },
-    {
       src: assetsUrl + "/clicks/PAUSA-30s-click-vs.mp3",
       name: "↓ ---- PAUSA - 30s",
       display: true,
       type: 'show-track',
       id: 80,
+    },
+    {
+      src: assetsUrl + "/clicks/CHAMADA-PROX-blury-visions-click-vs.mp3",
+      name: "↓ ---- CHAMADA PROX - Blurry Visions",
+      display: true,
+      type: 'show-track',
+      id: 84,
     },
     {
       src: assetsUrl + "/clicks/blurry-visions-slower-click-vs.mp3",
