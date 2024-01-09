@@ -259,6 +259,13 @@ const useTracks = () => {
       id: 84,
     },
     {
+      src: assetsUrl + "/clicks/PAUSA-30s-click-vs.mp3",
+      name: "↓ ---- PAUSA - 30s",
+      display: true,
+      type: 'show-track',
+      id: 80,
+    },
+    {
       src: assetsUrl + "/clicks/blurry-visions-slower-click-vs.mp3",
       name: "🎵 Blurry Visions - Slower - C Tuning",
       display: true,
