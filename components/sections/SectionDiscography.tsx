@@ -11,6 +11,12 @@ import styles from '../../styles/sections/SectionDiscography.module.css'
 const useAlbums = () => {
     const albums: AlbumProps[] = [
         {
+            coverUrl: '/cover-escape-samsara.jpg',
+            title: 'Escape Samsara',
+            date: 2024,
+            spotifyUrl: 'https://open.spotify.com/embed/track/7cq7TWLpMt17Hs5DX30wJ9?utm_source=generator'
+        },
+        {
             coverUrl: '/capa-someone-i-cant-be.jpg',
             title: 'Someone I Can\'t Be',
             date: 2023,
