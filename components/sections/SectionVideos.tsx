@@ -16,7 +16,7 @@ const useVideos = () => {
             title: 'Masskill - Escape Samsara (Visualizer w/ lyrics)',
         },
         {
-            url: 'https://www.youtube.com/embed/sD6ErOhZybc?si=wsz55IGTKvoXdO2D',
+            url: 'https://www.youtube.com/embed/sD6ErOhZybc',
             title: 'Masskill- Someone I Can\'t Be (Official Music Video)',
         },
         {
