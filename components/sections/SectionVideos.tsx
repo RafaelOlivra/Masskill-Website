@@ -12,6 +12,10 @@ import styles from '../../styles/sections/SectionVideos.module.css'
 const useVideos = () => {
     const videos: ResponsiveVideoProps[] = [
         {
+            url: 'https://www.youtube.com/embed/Fby4yFSttNU',
+            title: 'Masskill - Escape Samsara (Visualizer w/ lyrics)',
+        },
+        {
             url: 'https://www.youtube.com/embed/sD6ErOhZybc?si=wsz55IGTKvoXdO2D',
             title: 'Masskill- Someone I Can\'t Be (Official Music Video)',
         },
@@ -27,14 +31,18 @@ const useVideos = () => {
             url: 'https://www.youtube.com/embed/qQETNtcceuA',
             title: 'Masskill- Blury Visions (Official Music Video)',
         },
-        // {
-        //     url: 'https://www.youtube.com/embed/pgrLiBgF6No',
-        //     title: 'Masskill - Scream In Vain (Official Video) | Single 2018',
-        // },
-        // {
-        //     url: 'https://www.youtube.com/embed/3JjDCL_B0_M',
-        //     title: 'Masskill - The Cycle EP Solos (Guitar Playthrough)',
-        // },
+        {
+            url: 'https://www.youtube.com/embed/pgrLiBgF6No',
+            title: 'Masskill - Scream In Vain (Official Video) | Single 2018',
+        },
+        {
+            url: 'https://www.youtube.com/embed/kFblcjrioFY',
+            title: "Masskill - Where It's Dark (Guitar and Bass Playthrough)",
+        },
+        {
+            url: 'https://www.youtube.com/embed/3JjDCL_B0_M',
+            title: 'Masskill - The Cycle EP Solos (Guitar Playthrough)',
+        },
     ]
 
     return { videos }
@@ -99,7 +107,7 @@ const VideosCarousel: React.FC<VideosCarouselProps> = ({ videos, onSlideItemClic
         if (BreakPointWidth !== previousBreakPointWidth) {
             previousBreakPointWidth = BreakPointWidth
 
-            // Set the amount of slider to show based on the current breakpoint width
+            // Set the amount of slides to show based on the current breakpoint width
             let slidesToShow = 3
             if (BreakPointWidth == 440) {
                 slidesToShow = 1
@@ -156,7 +164,7 @@ const SectionVideos: React.FC = () => {
                 <div className={bootstrapStyles['row']}>
                     <div className={bootstrapStyles['col-lg-12']}>
 
-                        <div className={utilsStyles['text-center'] + ' ' + utilsStyles['hidden'] + ' ' + styles['featured-video-holder']}>
+                        <div className={utilsStyles['text-center'] + styles['featured-video-holder']}>
                             <div id="featured-video-holder" className={styles['video-holder']}>
                                 <FeaturedVideo />
                             </div>

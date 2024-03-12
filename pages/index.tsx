@@ -46,18 +46,6 @@ const Home: NextPage<Props> = ({ galleryImages }) => {
               />
             </span>
             <span style={{ display: 'none' }}>“Escape Samsara”</span></h1>
-          <div className={pageStyles['featured-cover-image']}>
-            <a href="https://open.spotify.com/intl-pt/album/5vM75PSBCZ4p2I6895Eqyh?si=4FVFwlMhSGelyAsUbpzaIg" title="Clique para ouvir o novo single da Masskill">
-              <Image
-                src='/cover-escape-samsara-lg.jpg'
-                alt='Capa Escape Samsara'
-                layout='responsive'
-                width={800}
-                height={800}
-                objectFit='contain'
-              />
-            </a>
-          </div>
         </SubHeader>
 
         <SectionVideos />
