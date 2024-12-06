@@ -1,11 +1,12 @@
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import pageStyles from '../styles/Page.module.css'
 
 import { readdirSync } from 'fs'
 import path from 'path'
+
+import Image from 'next/image'
 
 import SubHeader from '../components/SubHeader'
 import PageContent from '../components/PageContent';
@@ -45,18 +46,6 @@ const Home: NextPage<Props> = ({ galleryImages }) => {
               />
             </span>
             <span style={{ display: 'none' }}>“Escape Samsara”</span></h1>
-          <div className={pageStyles['featured-cover-image']}>
-            <a href="https://open.spotify.com/intl-pt/album/5vM75PSBCZ4p2I6895Eqyh?si=4FVFwlMhSGelyAsUbpzaIg" title="Clique para ouvir o novo single da Masskill">
-              <Image
-                src='/cover-escape-samsara-lg.jpg'
-                alt='Capa Escape Samsara'
-                layout='responsive'
-                width={800}
-                height={800}
-                objectFit='contain'
-              />
-            </a>
-          </div>
         </SubHeader>
 
         <SectionVideos />
@@ -67,7 +56,7 @@ const Home: NextPage<Props> = ({ galleryImages }) => {
         <SectionContact />
       </PageContent>
 
-    </main>
+    </main >
   )
 }
 

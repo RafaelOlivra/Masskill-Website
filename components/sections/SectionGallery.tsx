@@ -54,7 +54,7 @@ const SectionGallery: React.FC<galleryImagesList> = ({ galleryImages }) => {
                                                         alt={GalleryImage.alt}
                                                         layout='responsive'
                                                         width={1310}
-                                                        height={660}
+                                                        height={800}
                                                         objectFit='cover'
                                                     />
                                                 </div>)

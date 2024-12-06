@@ -15,3 +15,9 @@
   font-size: inherit;
   padding: 1rem var(--icon-padding, 1rem);
 }
+
+@media (max-width: 500px) {
+  .social-icon-row ul li a {
+    padding: 0 var(--icon-padding, 1rem);
+  }
+}

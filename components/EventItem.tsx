@@ -20,8 +20,8 @@ const EventItem: React.FC<EventProps> = ({ title, date, location, ticketsUrl, go
                 <div className={styles['location']}><time>{location}</time></div>
             </div>
             <div className={styles['buttons']}>
-                {ticketsUrl && <Button href={ticketsUrl}>Ingressos</Button>}
-                {googleMapsUrl && <Button href={googleMapsUrl} type="stroked">Como Chegar</Button>}
+                {ticketsUrl && <Button href={ticketsUrl} target='_blank'>Ingressos</Button>}
+                {googleMapsUrl && <Button href={googleMapsUrl} type="stroked" target='_blank'>Como Chegar</Button>}
             </div>
         </div>
     )

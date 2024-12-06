@@ -9,6 +9,25 @@
   margin-bottom: calc(var(--df-margin-unit) * 2);
 }
 
+.page-title-image {
+  display: block;
+  margin: 2rem auto 0;
+  max-width: 80%;
+}
+
+.featured-cover-image {
+  max-width: 70rem;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.3));
+}
+
+.inner-subtitle {
+  font-size: 90%;
+  position: relative;
+  font-weight: normal;
+  top: -5rem;
+}
+
 .template-default,
 .template-fullwidth,
 .page-content {
@@ -29,6 +48,19 @@
 }
 
 @media (max-width: 992px) {
+
+  .page-title-image {
+    max-width: 100%;
+  }
+
+  .featured-cover-image {
+    max-width: 100%;
+  }
+
+  .inner-subtitle {
+    top: -2rem;
+  }
+
   .section-heading {
     margin-top: calc(var(--df-margin-unit) * 2);
     margin-bottom: var(--df-margin-unit);

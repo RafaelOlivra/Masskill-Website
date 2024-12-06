@@ -7,15 +7,7 @@ import pageStyles from '../../styles/Page.module.css'
 import styles from '../../styles/sections/SectionEvents.module.css'
 
 const useEvents = () => {
-  const events: EventProps[] = [
-    {
-      title: 'Sorocaos Metal Fest',
-      date: '25 Fev 2024',
-      location: 'Asteroid Sorocaba',
-      ticketsUrl: 'https://www.sympla.com.br/evento/18h-sorocaos-metal-fest-hammathaz-conquistando-atlantida-masskill-e-mettonimia/2318926?referrer=m.facebook.com&share_id=copiarlink',
-      googleMapsUrl: 'https://www.google.com/maps/search/Asteroid,+Rua+Aparecida,+737+Jardim+Santa+Ros%C3%A1lia,+Sorocaba,+SP',
-    }
-  ]
+  const events: EventProps[] = []
   return { events }
 }
 
