@@ -1,5 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import pageStyles from '../styles/Page.module.css'
 
