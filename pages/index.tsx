@@ -32,7 +32,30 @@ const Home: NextPage<Props> = ({ galleryImages }) => {
 
       <PageContent template="fullwidth">
         <SubHeader>
-          <h1 className={pageStyles['page-title']}>Novo single “Blurry Visions” está disponível!</h1>
+          <h1 className={pageStyles['page-title']}>Confira o novo single <br />
+            <span className={pageStyles['page-title-image']}>
+              <Image
+                src='/escape-samsara-logo.png'
+                alt='Escape Samsara'
+                layout='responsive'
+                width={1100}
+                height={102}
+                objectFit='contain'
+              />
+            </span>
+            <span style={{ display: 'none' }}>“Escape Samsara”</span></h1>
+          <div className={pageStyles['featured-cover-image']}>
+            <a href="https://open.spotify.com/intl-pt/album/5vM75PSBCZ4p2I6895Eqyh?si=4FVFwlMhSGelyAsUbpzaIg" title="Clique para ouvir o novo single da Masskill">
+              <Image
+                src='/cover-escape-samsara-lg.jpg'
+                alt='Capa Escape Samsara'
+                layout='responsive'
+                width={800}
+                height={800}
+                objectFit='contain'
+              />
+            </a>
+          </div>
         </SubHeader>
 
         <SectionVideos />
