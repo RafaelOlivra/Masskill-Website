@@ -14,23 +14,6 @@ import styles from '../../styles/sections/SectionVideos.module.css'
 const useVideos = () => {
     const videos: ResponsiveVideoProps[] = [
         {
-<<<<<<< HEAD
-            url: 'https://www.youtube.com/embed/qQETNtcceuA',
-            title: 'Masskill- Blury Visions (Official Music Video)',
-        },
-        {
-            url: 'https://www.youtube.com/embed/pgrLiBgF6No',
-            title: 'Masskill - Scream In Vain (Official Video) | Single 2018',
-        },
-        {
-            url: 'https://www.youtube.com/embed/vDOBPfhn4wo',
-            title: 'Masskill - Down Society (Official Lyric Video)',
-        },
-        {
-            url: 'https://www.youtube.com/embed/3JjDCL_B0_M',
-            title: 'Masskill - The Cycle EP Solos (Guitar Playthrough)',
-        },
-=======
             url: 'https://www.youtube.com/embed/sD6ErOhZybc?si=wsz55IGTKvoXdO2D',
             title: 'Masskill- Someone I Can\'t Be (Official Music Video)',
         },
@@ -54,7 +37,6 @@ const useVideos = () => {
         //     url: 'https://www.youtube.com/embed/3JjDCL_B0_M',
         //     title: 'Masskill - The Cycle EP Solos (Guitar Playthrough)',
         // },
->>>>>>> parent of b8c8658 (Add Samsara video)
     ]
 
     return { videos }
@@ -188,11 +170,7 @@ const SectionVideos: React.FC = () => {
                 <div className={bootstrapStyles['row']}>
                     <div className={bootstrapStyles['col-lg-12']}>
 
-<<<<<<< HEAD
-                        <div className={utilsStyles['text-center'] + ' ' + styles['featured-video-holder']}>
-=======
                         <div className={utilsStyles['text-center'] + ' ' + utilsStyles['hidden'] + ' ' + styles['featured-video-holder']}>
->>>>>>> parent of b8c8658 (Add Samsara video)
                             <div id="featured-video-holder" className={styles['video-holder']}>
                                 <FeaturedVideo />
                             </div>
