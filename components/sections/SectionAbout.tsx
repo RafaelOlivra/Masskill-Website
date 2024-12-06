@@ -23,13 +23,6 @@ const useBandMembers = () => {
       instagram: 'https://www.instagram.com/rafael_olivra/',
     },
     {
-      profileImage: '/member-hugo-ferraz.jpg',
-      name: 'Hugo Ferraz',
-      url: 'https://www.facebook.com/hugo.ferraz.92',
-      facebook: 'https://www.facebook.com/hugo.ferraz.92',
-      instagram: 'https://www.instagram.com/hugo_ferz/',
-    },
-    {
       profileImage: '/member-vinicius-prudencio.jpg',
       name: 'Vinicius Prudêncio',
       url: 'https://www.facebook.com/profile.php?id=100010831272976',
