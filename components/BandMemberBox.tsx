@@ -15,7 +15,7 @@ const BandMemberBox: React.FC<BandMemberBoxProps> = ({ profileImage, url, name, 
     return (
         <div className={styles['band-member-box']}>
             <a href={url} className={styles['main-link']} target="_blank" rel="noreferrer">
-                <Image className={styles['member-image']} src={profileImage} alt={name} width="100%" height="100%" layout="responsive" objectFit="contain" />
+                <Image className={styles['member-image']} src={profileImage} alt={name} width="100" height="100" layout="responsive" objectFit="contain" />
             </a>
             <div className={styles['meta-data']}>
                 <p className={styles['name']}>{name}</p>
