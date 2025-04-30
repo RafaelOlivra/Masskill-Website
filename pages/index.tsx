@@ -16,7 +16,6 @@ import SectionEvents from '../components/sections/SectionEvents'
 import SectionAbout from '../components/sections/SectionAbout'
 import SectionGallery, { GalleryImage } from '../components/sections/SectionGallery'
 import SectionContact from '../components/sections/SectionContact'
-
 interface Props {
   galleryImages: GalleryImage[]
 }
