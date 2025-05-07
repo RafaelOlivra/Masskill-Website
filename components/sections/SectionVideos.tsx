@@ -1,8 +1,10 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import ResponsiveVideo, { ResponsiveVideoProps } from '../ResponsiveVideo';
 
 import { Audio as Loading } from 'react-loader-spinner'
+
+import withViewportAnimation from '../lib/useViewportAnimation'
 
 import bootstrapStyles from '../../styles/Bootstrap.module.css'
 import utilsStyles from '../../styles/Utils.module.css'
@@ -158,13 +160,21 @@ const SectionVideos: React.FC = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+    // Handle animations
+    const featuredVideoRef = useRef(null);
+    const VideosCarouselRef = useRef(null);
+    useEffect(() => {
+        withViewportAnimation(featuredVideoRef, 'fadeIn');
+        withViewportAnimation(VideosCarouselRef, 'fadeInUpSmall');
+    });
+
     return (
         <section className={styles['videos']} id="videos">
             <div className={bootstrapStyles['container']}>
                 <div className={bootstrapStyles['row']}>
                     <div className={bootstrapStyles['col-lg-12']}>
 
-                        <div className={utilsStyles['text-center'] + styles['featured-video-holder']}>
+                        <div ref={featuredVideoRef} className={utilsStyles['text-center'] + styles['featured-video-holder']}>
                             <div id="featured-video-holder" className={styles['video-holder']}>
                                 <FeaturedVideo />
                             </div>
@@ -174,10 +184,12 @@ const SectionVideos: React.FC = () => {
                             <h2 className="title">Vídeos</h2>
                             <a href="https://www.youtube.com/channel/UChFFgMwNVouYPrE9oiI0sKQ" className={pageStyles['side-link']} target="_blank" rel="noreferrer">Todos os Vídeos</a>
                         </div>
-                        <VideosCarousel videos={videos} onSlideItemClick={(e, video) => {
-                            e.preventDefault()
-                            handleFeaturedVideoUpdate(video)
-                        }} />
+                        <div ref={VideosCarouselRef}>
+                            <VideosCarousel videos={videos} onSlideItemClick={(e, video) => {
+                                e.preventDefault()
+                                handleFeaturedVideoUpdate(video)
+                            }} />
+                        </div>
                     </div>
                 </div>
             </div>
