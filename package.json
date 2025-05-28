@@ -14,7 +14,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.3.6",
+    "@types/react-dom": "^18.3.7",
     "eleventy-plugin-embed-spotify": "^1.2.7",
     "next": "14.2.24",
     "next-images": "^1.8.5",
