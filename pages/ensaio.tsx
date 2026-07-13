@@ -306,7 +306,7 @@ const useTracks = () => {
 }
 
 const useSimpleLockOut = () => {
-  const passwordHash = "LTEwODEyNzAyMTk="
+  const passwordHash = "MTM2NTUyODU5Mw=="
   const [isLocked, setLocked] = useState(false);
 
   const hashCode = (str: string) => {
