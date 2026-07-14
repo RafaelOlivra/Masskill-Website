@@ -385,54 +385,52 @@ const Page: NextPage = () => {
                     <AudioPlayer trackList={audioTrackList} />
                   </div>
 
-                  {false && (
-                    <>
-                      <h2
-                        className={
-                          utilsStyles['text-center'] +
-                          ' ' +
-                          utilsStyles['d-block']
-                        }
-                      >
-                        Click Tracks
-                      </h2>
-                      {tracks.map((track, index) => {
-                        if (track.display && track.type == 'click-track')
-                          return (
-                            <div
-                              key={index + track.name}
-                              className={bootstrapStyles['col-lg-12']}
-                            >
-                              <div className={bootstrapStyles['row']}>
-                                <div
-                                  className={
-                                    bootstrapStyles['col-lg-6'] +
-                                    ' ' +
-                                    utilsStyles['text-center-mb']
-                                  }
-                                >
-                                  <h3 className="h3">{track.name}</h3>
-                                </div>
-                                <div
-                                  className={
-                                    bootstrapStyles['col-lg-6'] +
-                                    ' ' +
-                                    utilsStyles['text-center']
-                                  }
-                                >
-                                  <ReactAudioPlayer
-                                    src={track.src}
-                                    className={utilsStyles['fullwidth']}
-                                    autoPlay={false}
-                                    controls
-                                  />
-                                </div>
+                  <>
+                    <h2
+                      className={
+                        utilsStyles['text-center'] +
+                        ' ' +
+                        utilsStyles['d-block']
+                      }
+                    >
+                      Click Tracks
+                    </h2>
+                    {tracks.map((track, index) => {
+                      if (track.display && track.type == 'click-track')
+                        return (
+                          <div
+                            key={index + track.name}
+                            className={bootstrapStyles['col-lg-12']}
+                          >
+                            <div className={bootstrapStyles['row']}>
+                              <div
+                                className={
+                                  bootstrapStyles['col-lg-6'] +
+                                  ' ' +
+                                  utilsStyles['text-center-mb']
+                                }
+                              >
+                                <h3 className="h3">{track.name}</h3>
+                              </div>
+                              <div
+                                className={
+                                  bootstrapStyles['col-lg-6'] +
+                                  ' ' +
+                                  utilsStyles['text-center']
+                                }
+                              >
+                                <ReactAudioPlayer
+                                  src={track.src}
+                                  className={utilsStyles['fullwidth']}
+                                  autoPlay={false}
+                                  controls
+                                />
                               </div>
                             </div>
-                          );
-                      })}
-                    </>
-                  )}
+                          </div>
+                        );
+                    })}
+                  </>
                 </div>
               </>
             )}
