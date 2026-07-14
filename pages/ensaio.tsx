@@ -282,6 +282,27 @@ const useTracks = () => {
       type: 'play-track',
       id: idCounter++,
     },
+    {
+      src: assetsUrl + '/tracks/nothing-burns-forever-FINAL-MASTER.mp3',
+      name: 'Nothing Burns Forever',
+      display: true,
+      type: 'play-track',
+      id: idCounter++,
+    },
+    {
+      src: assetsUrl + '/tracks/divine-deceiver.mpeg',
+      name: 'Divine Deceiver',
+      display: true,
+      type: 'play-track',
+      id: idCounter++,
+    },
+    {
+      src: assetsUrl + '/tracks/black-vultures-FINAL-MIX.mpeg',
+      name: 'Black Vultures',
+      display: true,
+      type: 'play-track',
+      id: idCounter++,
+    },
   ];
 
   const wClickTracks: Track[] = [
@@ -302,6 +323,27 @@ const useTracks = () => {
     {
       src: assetsUrl + '/clicks/someone-i-cant-be-click-vs.mp3',
       name: "🎵 Someone I Can't Be - C Tuning",
+      display: true,
+      type: 'show-track',
+      id: idCounter++,
+    },
+    {
+      src: assetsUrl + '/clicks/nothing-burns-forever-c-tuning-click.mpeg',
+      name: '🎵 Nothing Burns Forever - C Tuning',
+      display: true,
+      type: 'show-track',
+      id: idCounter++,
+    },
+    {
+      src: assetsUrl + '/clicks/divine-deceiver-c-tuning-click.mpeg',
+      name: '🎵 Divine Deceiver - C Tuning',
+      display: true,
+      type: 'show-track',
+      id: idCounter++,
+    },
+    {
+      src: assetsUrl + '/clicks/black-vultures-c-tuning-click.mpeg',
+      name: '🎵 Black Vultures - C Tuning',
       display: true,
       type: 'show-track',
       id: idCounter++,
