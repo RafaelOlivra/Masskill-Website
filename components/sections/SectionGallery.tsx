@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Carousel from 'nuka-carousel'
 
 import bootstrapStyles from '../../styles/Bootstrap.module.css'

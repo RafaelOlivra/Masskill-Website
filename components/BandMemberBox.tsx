@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import SocialIconRow, { SocialIconRowProps } from '../components/SocialIconRow'
 
 import styles from '../styles/components/BandMemberBox.module.css'

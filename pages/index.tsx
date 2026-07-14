@@ -6,7 +6,7 @@ import pageStyles from '../styles/Page.module.css'
 import { readdirSync } from 'fs'
 import path from 'path'
 
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 import SubHeader from '../components/SubHeader'
 import PageContent from '../components/PageContent';
