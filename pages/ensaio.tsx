@@ -31,233 +31,234 @@ interface Track {
 
 const useTracks = () => {
   const assetsUrl = 'https://static.masskill.com.br/assets';
+  let idCounter = 0;
 
-  const mkClickTracks: Track[] = [
-    {
-      src: assetsUrl + '/clicks/blurry-visions-click-vs.mp3',
-      name: 'CLICK + VS : Blurry Visions - C Tuning',
-      display: true,
-      type: 'click-track',
-      id: 30,
-    },
-    {
-      src: assetsUrl + '/clicks/coronga-virus-click-vs.mp3',
-      name: 'CLICK + VS : Coronga Virus - C Tuning',
-      display: true,
-      type: 'click-track',
-      id: 31,
-    },
-    {
-      src: assetsUrl + '/clicks/jangada-click-vs.mp3',
-      name: 'CLICK + VS : Jangada - C Tuning',
-      display: true,
-      type: 'click-track',
-      id: 32,
-    },
-    {
-      src: assetsUrl + '/clicks/plastic-sea-click-vs.mp3',
-      name: 'CLICK + VS : Plastic Sea (Arquitetura) - C Tuning',
-      display: true,
-      type: 'click-track',
-      id: 33,
-    },
-    {
-      src: assetsUrl + '/clicks/sinusite-click-vs.mp3',
-      name: 'CLICK + VS : Sinusite - C Tuning',
-      display: true,
-      type: 'click-track',
-      id: 34,
-    },
-    {
-      src:
-        assetsUrl +
-        '/clicks/the-beginning-of-all-life-(estilingue)-click-vs.mp3',
-      name: 'CLICK + VS : The Beginning of All Life (Estilingue) - C Tuning',
-      display: true,
-      type: 'click-track',
-      id: 35,
-    },
-    {
-      src: assetsUrl + '/clicks/someone-i-cant-be-click-vs.mp3',
-      name: 'CLICK + VS : Simone - C Tuning',
-      display: true,
-      type: 'click-track',
-      id: 36,
-    },
-  ];
+  //   const mkClickTracks: Track[] = [
+  //     {
+  //       src: assetsUrl + '/clicks/blurry-visions-click-vs.mp3',
+  //       name: 'CLICK + VS : Blurry Visions - C Tuning',
+  //       display: true,
+  //       type: 'click-track',
+  //       id: 30,
+  //     },
+  //     {
+  //       src: assetsUrl + '/clicks/coronga-virus-click-vs.mp3',
+  //       name: 'CLICK + VS : Coronga Virus - C Tuning',
+  //       display: true,
+  //       type: 'click-track',
+  //       id: 31,
+  //     },
+  //     {
+  //       src: assetsUrl + '/clicks/jangada-click-vs.mp3',
+  //       name: 'CLICK + VS : Jangada - C Tuning',
+  //       display: true,
+  //       type: 'click-track',
+  //       id: 32,
+  //     },
+  //     {
+  //       src: assetsUrl + '/clicks/plastic-sea-click-vs.mp3',
+  //       name: 'CLICK + VS : Plastic Sea (Arquitetura) - C Tuning',
+  //       display: true,
+  //       type: 'click-track',
+  //       id: 33,
+  //     },
+  //     {
+  //       src: assetsUrl + '/clicks/sinusite-click-vs.mp3',
+  //       name: 'CLICK + VS : Sinusite - C Tuning',
+  //       display: true,
+  //       type: 'click-track',
+  //       id: 34,
+  //     },
+  //     {
+  //       src:
+  //         assetsUrl +
+  //         '/clicks/the-beginning-of-all-life-(estilingue)-click-vs.mp3',
+  //       name: 'CLICK + VS : The Beginning of All Life (Estilingue) - C Tuning',
+  //       display: true,
+  //       type: 'click-track',
+  //       id: 35,
+  //     },
+  //     {
+  //       src: assetsUrl + '/clicks/someone-i-cant-be-click-vs.mp3',
+  //       name: 'CLICK + VS : Simone - C Tuning',
+  //       display: true,
+  //       type: 'click-track',
+  //       id: 36,
+  //     },
+  //   ];
 
-  const mkShowTracks: Track[] = [
-    // {
-    //   src: assetsUrl + "/clicks/intro-show-2023.mp3",
-    //   name: "↓ ---- INTRO SHOW 2023",
-    //   display: true,
-    //   type: 'show-track',
-    //   id: 90,
-    // },
-    {
-      src: assetsUrl + '/clicks/intro-show-oceanus-plastic-sea.mp3',
-      name: '🎵 INTRO SHOW 2023 + PLASTIC SEA',
-      display: true,
-      type: 'show-track',
-      id: 91,
-    },
-    // {
-    //   src: assetsUrl + "/clicks/plastic-sea-click-vs.mp3",
-    //   name: "🎵 Plastic Sea - C Tuning",
-    //   display: true,
-    //   type: 'show-track',
-    //   id: 63,
-    // },
-    {
-      src:
-        assetsUrl +
-        '/clicks/CHAMADA-PROX-SHORT-jangada-where-its-dark-click-vs.mp3',
-      name: "↓ ---- CHAMADA PROX SHORT - Where It's Dark",
-      display: true,
-      type: 'show-track',
-      id: 82,
-    },
-    {
-      src: assetsUrl + '/clicks/jangada-click-vs.mp3',
-      name: "🎵 Where It's Dark (Jangada) - C Tuning",
-      display: true,
-      type: 'show-track',
-      id: 62,
-    },
-    {
-      src:
-        assetsUrl +
-        '/clicks/CHAMADA-PROX-SHORT-the-beggining-of-all-life-click-vs.mp3',
-      name: '↓ ---- CHAMADA PROX SHORT - The Beginning of All Life',
-      display: true,
-      type: 'show-track',
-      id: 81,
-    },
-    {
-      src:
-        assetsUrl +
-        '/clicks/the-beginning-of-all-life-(estilingue)-click-vs.mp3',
-      name: '🎵 The Beginning of All Life (Estilingue) - C Tuning',
-      display: true,
-      type: 'show-track',
-      id: 65,
-    },
-    {
-      src: assetsUrl + '/clicks/PAUSA-30s-click-vs.mp3',
-      name: '↓ ---- PAUSA - 30s',
-      display: true,
-      type: 'show-track',
-      id: 80,
-    },
-    {
-      src:
-        assetsUrl + '/clicks/CHAMADA-PROX-sinusite-escape-samsara-click-vs.mp3',
-      name: '↓ ---- CHAMADA PROX - Escape Samsara',
-      display: true,
-      type: 'show-track',
-      id: 83,
-    },
-    {
-      src: assetsUrl + '/clicks/sinusite-click-vs.mp3',
-      name: '🎵 Escape Samsara (Sinusite) - C Tuning',
-      display: true,
-      type: 'show-track',
-      id: 64,
-    },
-    // {
-    //   src: assetsUrl + "/clicks/CHAMADA-PROX-SHORT-vem-hexa.mp3",
-    //   name: "↓ ---- CHAMADA PROX SHORT - Vem Hexa",
-    //   display: true,
-    //   type: 'show-track',
-    //   id: 88,
-    // },
-    // {
-    //   src: assetsUrl + "/clicks/vem-hexa-click-vs.mp3",
-    //   name: "🎵 Vem Hexa - C Tuning",
-    //   display: true,
-    //   type: 'show-track',
-    //   id: 89,
-    // },
-    // {
-    //   src: assetsUrl + "/clicks/PAUSA-30s-click-vs.mp3",
-    //   name: "↓ ---- PAUSA - 30s",
-    //   display: true,
-    //   type: 'show-track',
-    //   id: 80,
-    // },
-    {
-      src: assetsUrl + '/clicks/PAUSA-2-minutos-click-vs.mp3',
-      name: '↓ ---- PAUSA - 2 Minutos',
-      display: true,
-      type: 'show-track',
-      id: 81,
-    },
-    {
-      src: assetsUrl + '/clicks/CHAMADA-PROX-words-in-vain-click-vs.mp3',
-      name: '↓ ---- CHAMADA PROX SHORT - Words In Vain',
-      display: true,
-      type: 'show-track',
-      id: 38,
-    },
-    {
-      src: assetsUrl + '/clicks/words-in-vain-click-vs.mp3',
-      name: '🎵 Words In Vain - Acustica - Eb Tuning',
-      display: true,
-      type: 'show-track',
-      id: 37,
-    },
-    {
-      src: assetsUrl + '/clicks/PAUSA-30s-click-vs.mp3',
-      name: '↓ ---- PAUSA - 30s',
-      display: true,
-      type: 'show-track',
-      id: 80,
-    },
-    {
-      src: assetsUrl + '/clicks/CHAMADA-PROX-blury-visions-click-vs.mp3',
-      name: '↓ ---- CHAMADA PROX - Blurry Visions',
-      display: true,
-      type: 'show-track',
-      id: 84,
-    },
-    {
-      src: assetsUrl + '/clicks/blurry-visions-slower-click-vs.mp3',
-      name: '🎵 Blurry Visions - Slower - C Tuning',
-      display: true,
-      type: 'show-track',
-      id: 60,
-    },
-    {
-      src: assetsUrl + '/clicks/PAUSA-30s-click-vs.mp3',
-      name: '↓ ---- PAUSA - 30s',
-      display: true,
-      type: 'show-track',
-      id: 80,
-    },
-    // {
-    //   src: assetsUrl + "/clicks/PAUSA-2-minutos-click-vs.mp3",
-    //   name: "↓ ---- PAUSA - 2 Minutos",
-    //   display: true,
-    //   type: 'show-track',
-    //   id: 81,
-    // },
-    {
-      src:
-        assetsUrl +
-        '/clicks/CHAMADA-PROX-simone-someone-i-cant-be-click-vs.mp3',
-      name: "↓ ---- CHAMADA PROX - Someone I Can't Be (Ending)",
-      display: true,
-      type: 'show-track',
-      id: 86,
-    },
-    {
-      src: assetsUrl + '/clicks/someone-i-cant-be-ENDING-click-vs.mp3',
-      name: "🎵 Someone I Can't Be (Ending) - C Tuning",
-      display: true,
-      type: 'show-track',
-      id: 66,
-    },
-  ];
+  //   const mkShowTracks: Track[] = [
+  //     // {
+  //     //   src: assetsUrl + "/clicks/intro-show-2023.mp3",
+  //     //   name: "↓ ---- INTRO SHOW 2023",
+  //     //   display: true,
+  //     //   type: 'show-track',
+  //     //   id: 90,
+  //     // },
+  //     {
+  //       src: assetsUrl + '/clicks/intro-show-oceanus-plastic-sea.mp3',
+  //       name: '🎵 INTRO SHOW 2023 + PLASTIC SEA',
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 91,
+  //     },
+  //     // {
+  //     //   src: assetsUrl + "/clicks/plastic-sea-click-vs.mp3",
+  //     //   name: "🎵 Plastic Sea - C Tuning",
+  //     //   display: true,
+  //     //   type: 'show-track',
+  //     //   id: 63,
+  //     // },
+  //     {
+  //       src:
+  //         assetsUrl +
+  //         '/clicks/CHAMADA-PROX-SHORT-jangada-where-its-dark-click-vs.mp3',
+  //       name: "↓ ---- CHAMADA PROX SHORT - Where It's Dark",
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 82,
+  //     },
+  //     {
+  //       src: assetsUrl + '/clicks/jangada-click-vs.mp3',
+  //       name: "🎵 Where It's Dark (Jangada) - C Tuning",
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 62,
+  //     },
+  //     {
+  //       src:
+  //         assetsUrl +
+  //         '/clicks/CHAMADA-PROX-SHORT-the-beggining-of-all-life-click-vs.mp3',
+  //       name: '↓ ---- CHAMADA PROX SHORT - The Beginning of All Life',
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 81,
+  //     },
+  //     {
+  //       src:
+  //         assetsUrl +
+  //         '/clicks/the-beginning-of-all-life-(estilingue)-click-vs.mp3',
+  //       name: '🎵 The Beginning of All Life (Estilingue) - C Tuning',
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 65,
+  //     },
+  //     {
+  //       src: assetsUrl + '/clicks/PAUSA-30s-click-vs.mp3',
+  //       name: '↓ ---- PAUSA - 30s',
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 80,
+  //     },
+  //     {
+  //       src:
+  //         assetsUrl + '/clicks/CHAMADA-PROX-sinusite-escape-samsara-click-vs.mp3',
+  //       name: '↓ ---- CHAMADA PROX - Escape Samsara',
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 83,
+  //     },
+  //     {
+  //       src: assetsUrl + '/clicks/sinusite-click-vs.mp3',
+  //       name: '🎵 Escape Samsara (Sinusite) - C Tuning',
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 64,
+  //     },
+  //     // {
+  //     //   src: assetsUrl + "/clicks/CHAMADA-PROX-SHORT-vem-hexa.mp3",
+  //     //   name: "↓ ---- CHAMADA PROX SHORT - Vem Hexa",
+  //     //   display: true,
+  //     //   type: 'show-track',
+  //     //   id: 88,
+  //     // },
+  //     // {
+  //     //   src: assetsUrl + "/clicks/vem-hexa-click-vs.mp3",
+  //     //   name: "🎵 Vem Hexa - C Tuning",
+  //     //   display: true,
+  //     //   type: 'show-track',
+  //     //   id: 89,
+  //     // },
+  //     // {
+  //     //   src: assetsUrl + "/clicks/PAUSA-30s-click-vs.mp3",
+  //     //   name: "↓ ---- PAUSA - 30s",
+  //     //   display: true,
+  //     //   type: 'show-track',
+  //     //   id: 80,
+  //     // },
+  //     {
+  //       src: assetsUrl + '/clicks/PAUSA-2-minutos-click-vs.mp3',
+  //       name: '↓ ---- PAUSA - 2 Minutos',
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 81,
+  //     },
+  //     {
+  //       src: assetsUrl + '/clicks/CHAMADA-PROX-words-in-vain-click-vs.mp3',
+  //       name: '↓ ---- CHAMADA PROX SHORT - Words In Vain',
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 38,
+  //     },
+  //     {
+  //       src: assetsUrl + '/clicks/words-in-vain-click-vs.mp3',
+  //       name: '🎵 Words In Vain - Acustica - Eb Tuning',
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 37,
+  //     },
+  //     {
+  //       src: assetsUrl + '/clicks/PAUSA-30s-click-vs.mp3',
+  //       name: '↓ ---- PAUSA - 30s',
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 80,
+  //     },
+  //     {
+  //       src: assetsUrl + '/clicks/CHAMADA-PROX-blury-visions-click-vs.mp3',
+  //       name: '↓ ---- CHAMADA PROX - Blurry Visions',
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 84,
+  //     },
+  //     {
+  //       src: assetsUrl + '/clicks/blurry-visions-slower-click-vs.mp3',
+  //       name: '🎵 Blurry Visions - Slower - C Tuning',
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 60,
+  //     },
+  //     {
+  //       src: assetsUrl + '/clicks/PAUSA-30s-click-vs.mp3',
+  //       name: '↓ ---- PAUSA - 30s',
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 80,
+  //     },
+  //     // {
+  //     //   src: assetsUrl + "/clicks/PAUSA-2-minutos-click-vs.mp3",
+  //     //   name: "↓ ---- PAUSA - 2 Minutos",
+  //     //   display: true,
+  //     //   type: 'show-track',
+  //     //   id: 81,
+  //     // },
+  //     {
+  //       src:
+  //         assetsUrl +
+  //         '/clicks/CHAMADA-PROX-simone-someone-i-cant-be-click-vs.mp3',
+  //       name: "↓ ---- CHAMADA PROX - Someone I Can't Be (Ending)",
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 86,
+  //     },
+  //     {
+  //       src: assetsUrl + '/clicks/someone-i-cant-be-ENDING-click-vs.mp3',
+  //       name: "🎵 Someone I Can't Be (Ending) - C Tuning",
+  //       display: true,
+  //       type: 'show-track',
+  //       id: 66,
+  //     },
+  //   ];
 
   const wcTracks: Track[] = [
     {
@@ -265,21 +266,21 @@ const useTracks = () => {
       name: "🎵 Where It's Dark - C Tuning",
       display: true,
       type: 'show-track',
-      id: 62,
+      id: idCounter++,
     },
     {
       src: assetsUrl + '/clicks/sinusite-click-vs.mp3',
       name: '🎵 Escape Samsara - C Tuning',
       display: true,
       type: 'show-track',
-      id: 64,
+      id: idCounter++,
     },
     {
       src: assetsUrl + '/clicks/someone-i-cant-be-click-vs.mp3',
       name: "🎵 Someone I Can't Be - C Tuning",
       display: true,
       type: 'show-track',
-      id: 66,
+      id: idCounter++,
     },
   ];
 
@@ -329,7 +330,7 @@ const Page: NextPage = () => {
         preload: 'metadata',
         mediaMetadata: {
           title: track.name,
-          artist: 'Masskill',
+          artist: 'Rehearsal',
           album: 'ShowTracks',
         },
       });
@@ -340,7 +341,7 @@ const Page: NextPage = () => {
     <main className={pageStyles['page-holder']}>
       <Head>
         <title>Banda Masskill - Ensaio</title>
-        <meta name="description" content="Playlist Ensaio Masskill" />
+        <meta name="description" content="Playlist Ensaio" />
         <link rel="icon" href="/favicon.png" />
         <meta name="robots" content="noindex"></meta>
         <link rel="canonical" href="http://masskill.com.br/ensaio" />
@@ -375,7 +376,7 @@ const Page: NextPage = () => {
                       utilsStyles['text-center'] + ' ' + utilsStyles['d-block']
                     }
                   >
-                    Show (30 Min)
+                    Playlist
                   </h2>
                   <div
                     className={audioPlayerCustomStyles['audio-player-custom']}
