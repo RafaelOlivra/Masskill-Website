@@ -283,7 +283,7 @@ const useTracks = () => {
       id: idCounter++,
     },
     {
-      src: assetsUrl + '/tracks/nothing-burns-forever-FINAL-MASTER.mp3',
+      src: assetsUrl + '/tracks/nothing-burns-forever-FINAL-MASTER.mpeg',
       name: 'Nothing Burns Forever',
       display: true,
       type: 'play-track',
