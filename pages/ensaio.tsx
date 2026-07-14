@@ -38,14 +38,14 @@ const useTracks = () => {
     {
       src: assetsUrl + "/tracks/Coronga Virus Demo-C Tuning.mp3",
       name: "Coronga Virus Demo - C Tuning",
-      display: true,
+      display: false,
       type: 'play-track',
       id: 2,
     },
     {
       src: assetsUrl + "/tracks/plastic-sea-masskill-demo-(Arquitetura) - C Tuning.mp3",
       name: "plastic-sea-masskill-demo-(Arquitetura) - C Tuning",
-      display: true,
+      display: false,
       type: 'play-track',
       id: 3,
     },
@@ -322,6 +322,8 @@ const useSimpleLockOut = () => {
   const handleLockOut = () => {
     let inputPassword = prompt('Informe a senha de acesso!')
     inputPassword = inputPassword ? hashCode(inputPassword) : '';
+
+    console.log(hashCode("play123"))
 
     if (inputPassword === passwordHash) {
       setLocked(true)
