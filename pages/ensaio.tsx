@@ -320,12 +320,12 @@ const Page: NextPage = () => {
   const { isLocked, handleLockOut } = useSimpleLockOut();
 
   // Adapt showTracks to TrackType for use with react-audio-player-pro
-  const { tracks: showTracks } = useTracks();
-  let audioTrackList: TrackType[] = [];
+  const showTracks = tracks.filter((track) => track.type === 'show-track');
+  let playlist: TrackType[] = [];
 
   showTracks.map((track, index) => {
     if (track.type === 'show-track') {
-      audioTrackList.push({
+      playlist.push({
         src: track.src,
         preload: 'metadata',
         mediaMetadata: {
@@ -382,55 +382,57 @@ const Page: NextPage = () => {
                     className={audioPlayerCustomStyles['audio-player-custom']}
                   >
                     <AudioPlayerControlSprite />
-                    <AudioPlayer trackList={audioTrackList} />
+                    <AudioPlayer trackList={playlist} />
                   </div>
 
-                  <>
-                    <h2
-                      className={
-                        utilsStyles['text-center'] +
-                        ' ' +
-                        utilsStyles['d-block']
-                      }
-                    >
-                      Click Tracks
-                    </h2>
-                    {tracks.map((track, index) => {
-                      if (track.display && track.type == 'click-track')
-                        return (
-                          <div
-                            key={index + track.name}
-                            className={bootstrapStyles['col-lg-12']}
-                          >
-                            <div className={bootstrapStyles['row']}>
-                              <div
-                                className={
-                                  bootstrapStyles['col-lg-6'] +
-                                  ' ' +
-                                  utilsStyles['text-center-mb']
-                                }
-                              >
-                                <h3 className="h3">{track.name}</h3>
-                              </div>
-                              <div
-                                className={
-                                  bootstrapStyles['col-lg-6'] +
-                                  ' ' +
-                                  utilsStyles['text-center']
-                                }
-                              >
-                                <ReactAudioPlayer
-                                  src={track.src}
-                                  className={utilsStyles['fullwidth']}
-                                  autoPlay={false}
-                                  controls
-                                />
+                  {tracks.length !== 0 && (
+                    <>
+                      <h2
+                        className={
+                          utilsStyles['text-center'] +
+                          ' ' +
+                          utilsStyles['d-block']
+                        }
+                      >
+                        Click Tracks
+                      </h2>
+                      {tracks.map((track, index) => {
+                        if (track.display && track.type == 'click-track')
+                          return (
+                            <div
+                              key={index + track.name}
+                              className={bootstrapStyles['col-lg-12']}
+                            >
+                              <div className={bootstrapStyles['row']}>
+                                <div
+                                  className={
+                                    bootstrapStyles['col-lg-6'] +
+                                    ' ' +
+                                    utilsStyles['text-center-mb']
+                                  }
+                                >
+                                  <h3 className="h3">{track.name}</h3>
+                                </div>
+                                <div
+                                  className={
+                                    bootstrapStyles['col-lg-6'] +
+                                    ' ' +
+                                    utilsStyles['text-center']
+                                  }
+                                >
+                                  <ReactAudioPlayer
+                                    src={track.src}
+                                    className={utilsStyles['fullwidth']}
+                                    autoPlay={false}
+                                    controls
+                                  />
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        );
-                    })}
-                  </>
+                          );
+                      })}
+                    </>
+                  )}
                 </div>
               </>
             )}
