@@ -275,15 +275,6 @@ const useTracks = () => {
       id: 64,
     },
     {
-      src:
-        assetsUrl +
-        '/clicks/CHAMADA-PROX-simone-someone-i-cant-be-click-vs.mp3',
-      name: "↓ ---- CHAMADA PROX - Someone I Can't Be (Ending)",
-      display: true,
-      type: 'show-track',
-      id: 86,
-    },
-    {
       src: assetsUrl + '/clicks/someone-i-cant-be-click-vs.mp3',
       name: "🎵 Someone I Can't Be - C Tuning",
       display: true,
@@ -292,7 +283,7 @@ const useTracks = () => {
     },
   ];
 
-  return { tracks: [...mkClickTracks, ...mkShowTracks] };
+  return { tracks: [...wcTracks] };
 };
 
 const useSimpleLockOut = () => {
