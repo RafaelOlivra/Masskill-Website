@@ -262,27 +262,6 @@ const useTracks = () => {
 
   const wcTracks: Track[] = [
     {
-      src: assetsUrl + '/tracks/where-its-dark-2023-05-30-final-master.mp3',
-      name: "Where It's Dark",
-      display: true,
-      type: 'play-track',
-      id: idCounter++,
-    },
-    {
-      src: assetsUrl + '/tracks/escape-sansara-FINAL.mp3',
-      name: 'Escape Samsara',
-      display: true,
-      type: 'play-track',
-      id: idCounter++,
-    },
-    {
-      src: assetsUrl + '/tracks/someone-i-cant-be-masskill-oceanus.mp3',
-      name: "Someone I Can't Be",
-      display: true,
-      type: 'play-track',
-      id: idCounter++,
-    },
-    {
       src: assetsUrl + '/tracks/nothing-burns-forever-FINAL-MASTER.mp3',
       name: 'Nothing Burns Forever',
       display: true,
@@ -303,30 +282,30 @@ const useTracks = () => {
       type: 'play-track',
       id: idCounter++,
     },
+    {
+      src: assetsUrl + '/tracks/escape-sansara-FINAL.mp3',
+      name: 'Escape Samsara',
+      display: true,
+      type: 'play-track',
+      id: idCounter++,
+    },
+    {
+      src: assetsUrl + '/tracks/where-its-dark-2023-05-30-final-master.mp3',
+      name: "Where It's Dark",
+      display: true,
+      type: 'play-track',
+      id: idCounter++,
+    },
+    {
+      src: assetsUrl + '/tracks/someone-i-cant-be-masskill-oceanus.mp3',
+      name: "Someone I Can't Be",
+      display: true,
+      type: 'play-track',
+      id: idCounter++,
+    },
   ];
 
   const wClickTracks: Track[] = [
-    {
-      src: assetsUrl + '/clicks/jangada-click-vs.mp3',
-      name: "🎵 Where It's Dark - C Tuning",
-      display: true,
-      type: 'show-track',
-      id: idCounter++,
-    },
-    {
-      src: assetsUrl + '/clicks/sinusite-click-vs.mp3',
-      name: '🎵 Escape Samsara - C Tuning',
-      display: true,
-      type: 'show-track',
-      id: idCounter++,
-    },
-    {
-      src: assetsUrl + '/clicks/someone-i-cant-be-click-vs.mp3',
-      name: "🎵 Someone I Can't Be - C Tuning",
-      display: true,
-      type: 'show-track',
-      id: idCounter++,
-    },
     {
       src: assetsUrl + '/clicks/nothing-burns-forever-c-tuning-click.mp3',
       name: '🎵 Nothing Burns Forever - C Tuning',
@@ -344,6 +323,27 @@ const useTracks = () => {
     {
       src: assetsUrl + '/clicks/black-vultures-c-tuning-click.mp3',
       name: '🎵 Black Vultures - C Tuning',
+      display: true,
+      type: 'show-track',
+      id: idCounter++,
+    },
+    {
+      src: assetsUrl + '/clicks/sinusite-click-vs.mp3',
+      name: '🎵 Escape Samsara - C Tuning',
+      display: true,
+      type: 'show-track',
+      id: idCounter++,
+    },
+    {
+      src: assetsUrl + '/clicks/jangada-click-vs.mp3',
+      name: "🎵 Where It's Dark - C Tuning",
+      display: true,
+      type: 'show-track',
+      id: idCounter++,
+    },
+    {
+      src: assetsUrl + '/clicks/someone-i-cant-be-click-vs.mp3',
+      name: "🎵 Someone I Can't Be - C Tuning",
       display: true,
       type: 'show-track',
       id: idCounter++,
